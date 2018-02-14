@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import sys
 import time
 
 import RPi.GPIO as GPIO
@@ -7,6 +8,13 @@ import RPi.GPIO as GPIO
 
 COLUMNS = [25, 0, 1, 5, 6, 12, 13, 19, 21]
 ROWS = [22, 23, 24, 10, 9, 11, 8, 7, 16, 26, 20]
+
+
+def character(column, row):
+    return [[None, "z", "h", "\t", "1", "u", "q", "7", None, None, None],
+            [" ",  "x", "j", "a",  "2", "i", "w", "8", None, None, None],
+            [None, "c", "k", "s",  "3", "o", "e", "9"]][column][row]
+
 
 GPIO.setmode(GPIO.BCM)
 
@@ -19,12 +27,16 @@ for row in ROWS:
     GPIO.setup(row, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 while True:
-    output = ""
-    for column in COLUMNS:
+    for column_index, column in enumerate(COLUMNS):
+        output = []
         GPIO.output(column, 1)
-        time.sleep(0.05)
+        time.sleep(0.01)
         for row in ROWS:
-            output = output + ("%s" % GPIO.input(row))
+            output.append(GPIO.input(row))
         GPIO.output(column, 0)
-    print(output)
-    exit()
+        try:
+            row_index = output.index(1)
+            sys.stdout.write(character(column_index, row_index))
+            sys.stdout.flush()
+        except ValueError:
+            pass
