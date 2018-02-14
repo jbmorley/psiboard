@@ -36,7 +36,10 @@ while True:
         GPIO.output(column, 0)
         try:
             row_index = output.index(1)
-            sys.stdout.write(character(column_index, row_index))
+            try:
+                sys.stdout.write(character(column_index, row_index))
+            except IndexError:
+                sys.stdout.write("!")
             sys.stdout.flush()
-        except ValueError:
+        except (ValueError, IndexError):
             pass
