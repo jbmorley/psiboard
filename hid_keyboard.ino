@@ -60,6 +60,18 @@ void setup()
 
   // Set up and start advertising
   startAdv();
+
+
+  // Configure the keyboard pins.
+  pinMode(PIN_A0, INPUT_PULLUP);
+  pinMode(PIN_A1, INPUT_PULLUP);
+  pinMode(PIN_A2, INPUT_PULLUP);
+  pinMode(PIN_A3, INPUT_PULLUP);
+  
+//  digitalWrite(PIN_A0, HIGH);
+  pinMode(PIN_A0, OUTPUT);
+  digitalWrite(PIN_A0, LOW);
+//  digitalWrite(PIN_A2, LOW);
 }
 
 void startAdv(void)
@@ -115,6 +127,21 @@ void loop()
 
     // Delay a bit after a report
     delay(5);
+  }
+  
+  if (digitalRead(PIN_A1) == LOW) {
+    blehid.keyPress('z');
+    hasKeyPressed = true;
+  }
+
+  if (digitalRead(PIN_A2) == LOW) {
+    blehid.keyPress('h');
+    hasKeyPressed = true;
+  }
+
+  if (digitalRead(PIN_A3) == LOW) {
+    blehid.keyPress('\t');
+    hasKeyPressed = true;
   }
 
   // Request CPU to enter low-power mode until an event/interrupt occurs
