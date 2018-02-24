@@ -144,7 +144,7 @@ void loop()
     // Pull the column low.
     pinMode(column, OUTPUT);
     digitalWrite(column, LOW);
-    delay(5);
+    delay(5); // TODO: Is this necessary
 
     // TODO: Consider delaying here to allow everything to become quiescent.
 
@@ -159,7 +159,7 @@ void loop()
 
     // Restore the column.
     pinMode(column, INPUT_PULLUP);
-    delay(5);
+    delay(5); // TODO: Is this necessary
   }
   
   // Request CPU to enter low-power mode until an event/interrupt occurs
