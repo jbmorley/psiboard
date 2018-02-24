@@ -18,10 +18,14 @@ BLEHidAdafruit blehid;
 
 bool hasKeyPressed = false;
 
-int Rows[] = {PIN_A1, PIN_A2, PIN_A3};
-int MAX_ROWS = 3;
+# define MAX_COLUMNS 2
+int COLUMNS[] = {PIN_A0, PIN_A4};
 
-char CHARACTER_MAP[] = {'z', 'h', '\t'};
+#define MAX_ROWS 3
+int ROWS[] = {PIN_A1, PIN_A2, PIN_A3};
+
+static char CHARACTER_MAP[MAX_COLUMNS][MAX_ROWS] = {{'z', 'h', '\t'},
+                                                    {'x', 'j', 'a' }};
 
 void setup()
 {
@@ -66,17 +70,16 @@ void setup()
   // Set up and start advertising
   startAdv();
 
-
-  // Configure the keyboard pins.
-  pinMode(PIN_A0, INPUT_PULLUP);  
-  pinMode(PIN_A1, INPUT_PULLUP);
-  pinMode(PIN_A2, INPUT_PULLUP);
-  pinMode(PIN_A3, INPUT_PULLUP);
+  // Initialize the GPIO pins.
   
-//  digitalWrite(PIN_A0, HIGH);
-  pinMode(PIN_A0, OUTPUT);
-  digitalWrite(PIN_A0, LOW);
-//  digitalWrite(PIN_A2, LOW);
+  for (int c = 0; c < MAX_COLUMNS; c++) {
+    pinMode(COLUMNS[c], INPUT_PULLUP);
+  }
+
+  for (int r = 0; r < MAX_ROWS; r++) {
+    pinMode(ROWS[r], INPUT_PULLUP);
+  }
+
 }
 
 void startAdv(void)
@@ -134,12 +137,29 @@ void loop()
     delay(5);
   }
 
-  for (int r = 0; r < MAX_ROWS; r++) {
-    int pin = Rows[r];
-    if (digitalRead(Rows[r]) == LOW) {
-      blehid.keyPress(CHARACTER_MAP[r]);
-      hasKeyPressed = true;
+  // Iterate over the columns, pulling each low in turn.
+  for (int c = 0; c < MAX_COLUMNS; c++) {
+    int column = COLUMNS[c];
+
+    // Pull the column low.
+    pinMode(column, OUTPUT);
+    digitalWrite(column, LOW);
+    delay(5);
+
+    // TODO: Consider delaying here to allow everything to become quiescent.
+
+    // Iterate over the rows, reading their state.
+    for (int r = 0; r < MAX_ROWS; r++) {
+      int row = ROWS[r];
+      if (digitalRead(row) == LOW) {
+        blehid.keyPress(CHARACTER_MAP[c][r]);
+        hasKeyPressed = true;
+      }
     }
+
+    // Restore the column.
+    pinMode(column, INPUT_PULLUP);
+    delay(5);
   }
   
   // Request CPU to enter low-power mode until an event/interrupt occurs
