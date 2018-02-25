@@ -24,30 +24,21 @@ int COLUMNS[] = {PIN_A0, PIN_A3, PIN_A4, 12, 14, 16, 20, 27};
 #define MAX_ROWS 11
 int ROWS[] = {PIN_A1, PIN_A2, PIN_A5, 13, 8, 15, 7, 11, 26, 25, 6};
 
-#define KEY_MENU '!'
-#define KEY_ESC '!'
-#define KEY_FN '!'
-#define KEY_DEL '!'
-#define KEY_ENTER '!'
-#define KEY_UP '!'
-#define KEY_DOWN '!'
-#define KEY_LEFT '!'
-#define KEY_RIGHT '!'
-#define KEY_LSHIFT '!'
-#define KEY_RSHIFT '!'
-#define KEY_CTRL '!'
-#define KEY_SPACE '!'
+#define KEY_MENU HID_KEY_A
+#define KEY_ESC HID_KEY_A
+#define KEY_FN HID_KEY_A
+#define KEY_CTRL HID_KEY_A
 
 static char CHARACTER_MAP[9][11] = {
-  {0,          'z',          'h',      '\t',       '1',  'u',       'q',  '7',     0,      KEY_MENU, KEY_ESC},
-  {KEY_SPACE,  'x',          'j',      'a',        '2',  'i',       'w',  '8',     KEY_FN, 0,        0},
-  {KEY_UP,     'c',          'k',      's',        '3',  'o',       'e',  '9',     0,      0,        0},
-  {',',        'v',          'm',      'd',        '4',  'p',       'r',  '0',     0,      0,        0},
-  {KEY_LEFT,   'b',          '.',      'f',        '5',  'l',       't',  KEY_DEL, 0,      0,        0},
-  {KEY_RIGHT,  'n',          KEY_DOWN, 'g',        '6',  KEY_ENTER, 'y',  '~',     0,      0,        0},
-  {KEY_LSHIFT, 0,            0,        0,           0,   0,          0,   0,       0,      0,        0},
-  {0,          KEY_RSHIFT,   0,        KEY_CTRL,    0,   0,          0,   0,       0,      0,        0},
-  {0,          0,            0,        KEY_CTRL,    0,   0,          0,   0,       0,      0,        0},
+  {0,                   HID_KEY_Z,           HID_KEY_H,          HID_KEY_TAB, HID_KEY_1, HID_KEY_U,      HID_KEY_Q, HID_KEY_7,         0,      KEY_MENU, KEY_ESC},
+  {HID_KEY_SPACE,       HID_KEY_X,           HID_KEY_J,          HID_KEY_A,   HID_KEY_2, HID_KEY_I,      HID_KEY_W, HID_KEY_8,         KEY_FN, 0,        0},
+  {HID_KEY_ARROW_UP,    HID_KEY_C,           HID_KEY_K,          HID_KEY_S,   HID_KEY_3, HID_KEY_O,      HID_KEY_E, HID_KEY_9,         0,      0,        0},
+  {HID_KEY_COMMA,       HID_KEY_V,           HID_KEY_M,          HID_KEY_D,   HID_KEY_4, HID_KEY_P,      HID_KEY_R, HID_KEY_0,         0,      0,        0},
+  {HID_KEY_ARROW_LEFT,  HID_KEY_B,           HID_KEY_PERIOD,     HID_KEY_F,   HID_KEY_5, HID_KEY_L,      HID_KEY_T, HID_KEY_BACKSPACE, 0,      0,        0},
+  {HID_KEY_ARROW_RIGHT, HID_KEY_N,           HID_KEY_ARROW_DOWN, HID_KEY_G,   HID_KEY_6, HID_KEY_RETURN, HID_KEY_Y, '~',               0,      0,        0},
+  {HID_KEY_SHIFT_LEFT,  0,                   0,                  0,           0,         0,              0,         0,                 0,      0,        0},
+  {0,                   HID_KEY_SHIFT_RIGHT, 0,                  KEY_CTRL,    0,         0,              0,         0,                 0,      0,        0},
+  {0,                   0,                   0,                  KEY_CTRL,    0,         0,              0,         0,                 0,      0,        0},
 };
 
 void setup()
@@ -177,7 +168,7 @@ void loop()
       if (digitalRead(row) == LOW) {
         char character = CHARACTER_MAP[c][r];
         if (character != 0) {
-          blehid.keyPress(character);
+          blehid.keyboardReport(0, character);
           hasKeyPressed = true;
         }
       }
