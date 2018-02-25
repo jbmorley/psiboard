@@ -29,17 +29,36 @@ int ROWS[] = {PIN_A1, PIN_A2, PIN_A5, 13, 8, 15, 7, 11, 26, 25, 6};
 #define KEY_FN HID_KEY_A
 #define KEY_CTRL HID_KEY_A
 
-static char CHARACTER_MAP[9][11] = {
-  {0,                   HID_KEY_Z,           HID_KEY_H,          HID_KEY_TAB, HID_KEY_1, HID_KEY_U,      HID_KEY_Q, HID_KEY_7,         0,      KEY_MENU, KEY_ESC},
-  {HID_KEY_SPACE,       HID_KEY_X,           HID_KEY_J,          HID_KEY_A,   HID_KEY_2, HID_KEY_I,      HID_KEY_W, HID_KEY_8,         KEY_FN, 0,        0},
-  {HID_KEY_ARROW_UP,    HID_KEY_C,           HID_KEY_K,          HID_KEY_S,   HID_KEY_3, HID_KEY_O,      HID_KEY_E, HID_KEY_9,         0,      0,        0},
-  {HID_KEY_COMMA,       HID_KEY_V,           HID_KEY_M,          HID_KEY_D,   HID_KEY_4, HID_KEY_P,      HID_KEY_R, HID_KEY_0,         0,      0,        0},
-  {HID_KEY_ARROW_LEFT,  HID_KEY_B,           HID_KEY_PERIOD,     HID_KEY_F,   HID_KEY_5, HID_KEY_L,      HID_KEY_T, HID_KEY_BACKSPACE, 0,      0,        0},
-  {HID_KEY_ARROW_RIGHT, HID_KEY_N,           HID_KEY_ARROW_DOWN, HID_KEY_G,   HID_KEY_6, HID_KEY_RETURN, HID_KEY_Y, '~',               0,      0,        0},
-  {HID_KEY_SHIFT_LEFT,  0,                   0,                  0,           0,         0,              0,         0,                 0,      0,        0},
-  {0,                   HID_KEY_SHIFT_RIGHT, 0,                  KEY_CTRL,    0,         0,              0,         0,                 0,      0,        0},
-  {0,                   0,                   0,                  KEY_CTRL,    0,         0,              0,         0,                 0,      0,        0},
+static uint8_t CHARACTER_MAP[9][11] = {
+  {0,                   HID_KEY_Z,           HID_KEY_H,          HID_KEY_TAB, HID_KEY_1, HID_KEY_U,      HID_KEY_Q, HID_KEY_7,          0,      KEY_MENU, KEY_ESC},
+  {HID_KEY_SPACE,       HID_KEY_X,           HID_KEY_J,          HID_KEY_A,   HID_KEY_2, HID_KEY_I,      HID_KEY_W, HID_KEY_8,          KEY_FN, 0,        0},
+  {HID_KEY_ARROW_UP,    HID_KEY_C,           HID_KEY_K,          HID_KEY_S,   HID_KEY_3, HID_KEY_O,      HID_KEY_E, HID_KEY_9,          0,      0,        0},
+  {HID_KEY_COMMA,       HID_KEY_V,           HID_KEY_M,          HID_KEY_D,   HID_KEY_4, HID_KEY_P,      HID_KEY_R, HID_KEY_0,          0,      0,        0},
+  {HID_KEY_ARROW_LEFT,  HID_KEY_B,           HID_KEY_PERIOD,     HID_KEY_F,   HID_KEY_5, HID_KEY_L,      HID_KEY_T, HID_KEY_BACKSPACE,  0,      0,        0},
+  {HID_KEY_ARROW_RIGHT, HID_KEY_N,           HID_KEY_ARROW_DOWN, HID_KEY_G,   HID_KEY_6, HID_KEY_RETURN, HID_KEY_Y, HID_KEY_APOSTROPHE, 0,      0,        0},
+  {HID_KEY_SHIFT_LEFT,  0,                   0,                  0,           0,         0,              0,         0,                  0,      0,        0},
+  {0,                   HID_KEY_SHIFT_RIGHT, 0,                  KEY_CTRL,    0,         0,              0,         0,                  0,      0,        0},
+  {0,                   0,                   0,                  KEY_CTRL,    0,         0,              0,         0,                  0,      0,        0},
 };
+
+static uint8_t keyboardState[9][11] = { 0 };
+static bool shiftPressed = false;
+
+void sendKey(uint8_t keyCode, bool down) {
+
+  // TODO: Consider whether we need to do some shift handling locally.
+  if (keyCode == HID_KEY_SHIFT_LEFT ||
+      keyCode == HID_KEY_SHIFT_RIGHT) {
+    shiftPressed = down;
+    return;
+  }
+  
+  if (down) {
+    blehid.keyboardReport(shiftPressed ? KEYBOARD_MODIFIER_LEFTSHIFT : 0, keyCode);
+  } else {
+    blehid.keyRelease();
+  }
+}
 
 void setup()
 {
@@ -164,12 +183,15 @@ void loop()
 
     // Iterate over the rows, reading their state.
     for (int r = 0; r < MAX_ROWS; r++) {
-      int row = ROWS[r];
-      if (digitalRead(row) == LOW) {
+      
+      int keyDown = (digitalRead(ROWS[r]) == LOW) ? 1 : 0;
+      int currentKeyDown = keyboardState[c][r];
+      
+      if (keyDown != currentKeyDown) {
         char character = CHARACTER_MAP[c][r];
-        if (character != 0) {
-          blehid.keyboardReport(0, character);
-          hasKeyPressed = true;
+        if (character != HID_KEY_NONE) {
+          sendKey(character, keyDown);
+          keyboardState[c][r] = keyDown;
         }
       }
     }
