@@ -61,12 +61,29 @@ static ModifierBehavior ShiftBehavior[SHIFT_BEHAVIOR_COUNT] = {
   { .keyCode = HID_KEY_2,          .modifiedKeyCode = HID_KEY_NONE,  .modifiedCharacter = '"'  },
 };
 
-#define FN_BEHAVIOR_COUNT 4
+#define FN_BEHAVIOR_COUNT 22
 static ModifierBehavior FnBehavior[FN_BEHAVIOR_COUNT] = {
-  { .keyCode = HID_KEY_Y, .modifiedKeyCode = HID_KEY_KEYPAD_MULTIPLY, .modifiedCharacter = 0x00 },
-  { .keyCode = HID_KEY_U, .modifiedKeyCode = HID_KEY_KEYPAD_DIVIDE,   .modifiedCharacter = 0x00 },
-  { .keyCode = HID_KEY_I, .modifiedKeyCode = HID_KEY_KEYPAD_ADD,      .modifiedCharacter = 0x00 },
-  { .keyCode = HID_KEY_O, .modifiedKeyCode = HID_KEY_KEYPAD_SUBTRACT, .modifiedCharacter = 0x00 },
+  { .keyCode = HID_KEY_Y,           .modifiedKeyCode = HID_KEY_KEYPAD_MULTIPLY, .modifiedCharacter = 0x00 },
+  { .keyCode = HID_KEY_U,           .modifiedKeyCode = HID_KEY_KEYPAD_DIVIDE,   .modifiedCharacter = 0x00 },
+  { .keyCode = HID_KEY_I,           .modifiedKeyCode = HID_KEY_KEYPAD_ADD,      .modifiedCharacter = 0x00 },
+  { .keyCode = HID_KEY_O,           .modifiedKeyCode = HID_KEY_KEYPAD_SUBTRACT, .modifiedCharacter = 0x00 },
+  { .keyCode = HID_KEY_P,           .modifiedKeyCode = HID_KEY_KEYPAD_EQUAL,    .modifiedCharacter = 0x00 },
+  { .keyCode = HID_KEY_1,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = '_'  },
+  { .keyCode = HID_KEY_2,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = '#'  }, // TODO: Enters £ on British layout.
+  { .keyCode = HID_KEY_3,           .modifiedKeyCode = HID_KEY_BACKSLASH,       .modifiedCharacter = 0x00 },
+  { .keyCode = HID_KEY_4,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = '@'  },
+  { .keyCode = HID_KEY_5,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = '<'  },
+  { .keyCode = HID_KEY_6,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = '>'  },
+  { .keyCode = HID_KEY_7,           .modifiedKeyCode = HID_KEY_BRACKET_LEFT,    .modifiedCharacter = 0x00 },
+  { .keyCode = HID_KEY_8,           .modifiedKeyCode = HID_KEY_BRACKET_RIGHT,   .modifiedCharacter = 0x00 },
+  { .keyCode = HID_KEY_9,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = '{'  },
+  { .keyCode = HID_KEY_0,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = '}'  },
+  { .keyCode = HID_KEY_L,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = ';'  },
+  { .keyCode = HID_KEY_APOSTROPHE,  .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = ':'  },
+  { .keyCode = HID_KEY_ARROW_LEFT,  .modifiedKeyCode = HID_KEY_HOME,            .modifiedCharacter = 0x00 }, // TODO: Doesn't seem to work.
+  { .keyCode = HID_KEY_ARROW_RIGHT, .modifiedKeyCode = HID_KEY_END,             .modifiedCharacter = 0x00 }, // TODO: Doesn't seem to work.
+  { .keyCode = HID_KEY_ARROW_UP,    .modifiedKeyCode = HID_KEY_PAGE_UP,         .modifiedCharacter = 0x00 }, // TODO: Doesn't seem to work.
+  { .keyCode = HID_KEY_ARROW_DOWN,  .modifiedKeyCode = HID_KEY_PAGE_DOWN,       .modifiedCharacter = 0x00 }, // TODO: Doesn't seem to work.
 };
 
 static uint8_t keyboardState[COL_COUNT][ROW_COUNT] = { 0 };
