@@ -1,15 +1,15 @@
 /*********************************************************************
- This is an example for our nRF52 based Bluefruit LE modules
+  This is an example for our nRF52 based Bluefruit LE modules
 
- Pick one up today in the adafruit shop!
+  Pick one up today in the adafruit shop!
 
- Adafruit invests time and resources providing this open source code,
- please support Adafruit and open-source hardware by purchasing
- products from Adafruit!
+  Adafruit invests time and resources providing this open source code,
+  please support Adafruit and open-source hardware by purchasing
+  products from Adafruit!
 
- MIT license, check LICENSE for more information
- All text above, and the splash screen below must be included in
- any redistribution
+  MIT license, check LICENSE for more information
+  All text above, and the splash screen below must be included in
+  any redistribution
 *********************************************************************/
 #include <bluefruit.h>
 
@@ -18,14 +18,37 @@ BLEHidAdafruit blehid;
 
 bool hasKeyPressed = false;
 
-# define MAX_COLUMNS 2
-int COLUMNS[] = {PIN_A0, PIN_A4};
+# define MAX_COLUMNS 8
+int COLUMNS[] = {PIN_A0, PIN_A3, PIN_A4, 12, 14, 16, 20, 27};
 
-#define MAX_ROWS 3
-int ROWS[] = {PIN_A1, PIN_A2, PIN_A3};
+#define MAX_ROWS 11
+int ROWS[] = {PIN_A1, PIN_A2, PIN_A5, 13, 8, 15, 7, 11, 26, 25, 6};
 
-static char CHARACTER_MAP[MAX_COLUMNS][MAX_ROWS] = {{'z', 'h', '\t'},
-                                                    {'x', 'j', 'a' }};
+#define KEY_MENU '!'
+#define KEY_ESC '!'
+#define KEY_FN '!'
+#define KEY_DEL '!'
+#define KEY_ENTER '!'
+#define KEY_UP '!'
+#define KEY_DOWN '!'
+#define KEY_LEFT '!'
+#define KEY_RIGHT '!'
+#define KEY_LSHIFT '!'
+#define KEY_RSHIFT '!'
+#define KEY_CTRL '!'
+#define KEY_SPACE '!'
+
+static char CHARACTER_MAP[9][11] = {
+  {0,          'z',          'h',      '\t',       '1',  'u',       'q',  '7',     0,      KEY_MENU, KEY_ESC},
+  {KEY_SPACE,  'x',          'j',      'a',        '2',  'i',       'w',  '8',     KEY_FN, 0,        0},
+  {KEY_UP,     'c',          'k',      's',        '3',  'o',       'e',  '9',     0,      0,        0},
+  {',',        'v',          'm',      'd',        '4',  'p',       'r',  '0',     0,      0,        0},
+  {KEY_LEFT,   'b',          '.',      'f',        '5',  'l',       't',  KEY_DEL, 0,      0,        0},
+  {KEY_RIGHT,  'n',          KEY_DOWN, 'g',        '6',  KEY_ENTER, 'y',  '~',     0,      0,        0},
+  {KEY_LSHIFT, 0,            0,        0,           0,   0,          0,   0,       0,      0,        0},
+  {0,          KEY_RSHIFT,   0,        KEY_CTRL,    0,   0,          0,   0,       0,      0,        0},
+  {0,          0,            0,        KEY_CTRL,    0,   0,          0,   0,       0,      0,        0},
+};
 
 void setup()
 {
@@ -53,25 +76,25 @@ void setup()
   bledis.begin();
 
   /* Start BLE HID
-   * Note: Apple requires BLE device must have min connection interval >= 20m
-   * ( The smaller the connection interval the faster we could send data).
-   * However for HID and MIDI device, Apple could accept min connection interval
-   * up to 11.25 ms. Therefore BLEHidAdafruit::begin() will try to set the min and max
-   * connection interval to 11.25  ms and 15 ms respectively for best performance.
-   */
+     Note: Apple requires BLE device must have min connection interval >= 20m
+     ( The smaller the connection interval the faster we could send data).
+     However for HID and MIDI device, Apple could accept min connection interval
+     up to 11.25 ms. Therefore BLEHidAdafruit::begin() will try to set the min and max
+     connection interval to 11.25  ms and 15 ms respectively for best performance.
+  */
   blehid.begin();
 
   /* Set connection interval (min, max) to your perferred value.
-   * Note: It is already set by BLEHidAdafruit::begin() to 11.25ms - 15ms
-   * min = 9*1.25=11.25 ms, max = 12*1.25= 15 ms
-   */
+     Note: It is already set by BLEHidAdafruit::begin() to 11.25ms - 15ms
+     min = 9*1.25=11.25 ms, max = 12*1.25= 15 ms
+  */
   /* Bluefruit.setConnInterval(9, 12); */
 
   // Set up and start advertising
   startAdv();
 
   // Initialize the GPIO pins.
-  
+
   for (int c = 0; c < MAX_COLUMNS; c++) {
     pinMode(COLUMNS[c], INPUT_PULLUP);
   }
@@ -96,14 +119,14 @@ void startAdv(void)
   Bluefruit.Advertising.addName();
 
   /* Start Advertising
-   * - Enable auto advertising if disconnected
-   * - Interval:  fast mode = 20 ms, slow mode = 152.5 ms
-   * - Timeout for fast mode is 30 seconds
-   * - Start(timeout) with timeout = 0 will advertise forever (until connected)
-   *
-   * For recommended advertising interval
-   * https://developer.apple.com/library/content/qa/qa1931/_index.html
-   */
+     - Enable auto advertising if disconnected
+     - Interval:  fast mode = 20 ms, slow mode = 152.5 ms
+     - Timeout for fast mode is 30 seconds
+     - Start(timeout) with timeout = 0 will advertise forever (until connected)
+
+     For recommended advertising interval
+     https://developer.apple.com/library/content/qa/qa1931/_index.html
+  */
   Bluefruit.Advertising.restartOnDisconnect(true);
   Bluefruit.Advertising.setInterval(32, 244);    // in unit of 0.625 ms
   Bluefruit.Advertising.setFastTimeout(30);      // number of seconds in fast mode
@@ -152,8 +175,11 @@ void loop()
     for (int r = 0; r < MAX_ROWS; r++) {
       int row = ROWS[r];
       if (digitalRead(row) == LOW) {
-        blehid.keyPress(CHARACTER_MAP[c][r]);
-        hasKeyPressed = true;
+        char character = CHARACTER_MAP[c][r];
+        if (character != 0) {
+          blehid.keyPress(character);
+          hasKeyPressed = true;
+        }
       }
     }
 
@@ -161,26 +187,26 @@ void loop()
     pinMode(column, INPUT_PULLUP);
     delay(5); // TODO: Is this necessary
   }
-  
+
   // Request CPU to enter low-power mode until an event/interrupt occurs
   waitForEvent();
 }
 
 /**
- * RTOS Idle callback is automatically invoked by FreeRTOS
- * when there are no active threads. E.g when loop() calls delay() and
- * there is no bluetooth or hw event. This is the ideal place to handle
- * background data.
- *
- * NOTE: FreeRTOS is configured as tickless idle mode. After this callback
- * is executed, if there is time, freeRTOS kernel will go into low power mode.
- * Therefore waitForEvent() should not be called in this callback.
- * http://www.freertos.org/low-power-tickless-rtos.html
- *
- * WARNING: This function MUST NOT call any blocking FreeRTOS API
- * such as delay(), xSemaphoreTake() etc ... for more information
- * http://www.freertos.org/a00016.html
- */
+   RTOS Idle callback is automatically invoked by FreeRTOS
+   when there are no active threads. E.g when loop() calls delay() and
+   there is no bluetooth or hw event. This is the ideal place to handle
+   background data.
+
+   NOTE: FreeRTOS is configured as tickless idle mode. After this callback
+   is executed, if there is time, freeRTOS kernel will go into low power mode.
+   Therefore waitForEvent() should not be called in this callback.
+   http://www.freertos.org/low-power-tickless-rtos.html
+
+   WARNING: This function MUST NOT call any blocking FreeRTOS API
+   such as delay(), xSemaphoreTake() etc ... for more information
+   http://www.freertos.org/a00016.html
+*/
 void rtos_idle_callback(void)
 {
   // Don't call any other FreeRTOS blocking API()
