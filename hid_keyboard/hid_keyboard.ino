@@ -41,6 +41,21 @@ static uint8_t CHARACTER_MAP[9][11] = {
   {0,                   0,                   0,                  KEY_CTRL,    0,         0,              0,         0,                  0,      0,        0},
 };
 
+struct ModifierBehavior {
+  uint8_t keyCode;
+  uint8_t modifiedKeyCode;
+  char modifiedCharacter;
+};
+
+#define SHIFT_BEHAVIOR_COUNT 4
+static ModifierBehavior ShiftBehavior[SHIFT_BEHAVIOR_COUNT] = {
+  { .keyCode = HID_KEY_COMMA,      .modifiedKeyCode = HID_KEY_SLASH, .modifiedCharacter = 0x00 },
+  { .keyCode = HID_KEY_PERIOD,     .modifiedKeyCode = HID_KEY_NONE,  .modifiedCharacter = '?'  },
+  { .keyCode = HID_KEY_APOSTROPHE, .modifiedKeyCode = HID_KEY_NONE,  .modifiedCharacter = '~'  },
+  { .keyCode = HID_KEY_2,          .modifiedKeyCode = HID_KEY_NONE,  .modifiedCharacter = '"'  },
+};
+
+
 static uint8_t keyboardState[9][11] = { 0 };
 static bool shiftPressed = false;
 
@@ -51,6 +66,36 @@ void sendKey(uint8_t keyCode, bool down) {
       keyCode == HID_KEY_SHIFT_RIGHT) {
     shiftPressed = down;
     return;
+  }
+
+  // Check to see if we have special case handling for the shift.
+  if (shiftPressed) {
+    ModifierBehavior behavior;
+    bool found = false;
+    for (int i = 0; i < SHIFT_BEHAVIOR_COUNT; i++) {
+      ModifierBehavior loopBehavior = ShiftBehavior[i];
+      if (loopBehavior.keyCode == keyCode) {
+        behavior = loopBehavior;
+        found = true;
+        break;
+      }
+    }
+    if (found) {
+      if (behavior.modifiedKeyCode) {
+        if (down) {
+          blehid.keyboardReport(0, behavior.modifiedKeyCode);
+        } else {
+          blehid.keyRelease();
+        }
+      } else {
+        if (down) {
+          blehid.keyPress(behavior.modifiedCharacter);
+        } else {
+          blehid.keyRelease();
+        }        
+      }
+      return;
+    }
   }
   
   if (down) {
