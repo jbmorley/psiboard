@@ -92,38 +92,38 @@ static bool fnPressed = false;
 
 static uint8_t modifierState = 0;
 
+void updateModifierState(uint8_t *modifierState, uint8_t modifier, bool down) {
+  if (down) {
+    *modifierState |= modifier;
+  } else {
+    *modifierState &= ~modifier;
+  }
+}
+
 void sendKey(uint8_t keyCode, bool down) {
 
   // Handle the shift key locally.
   if (keyCode == HID_KEY_SHIFT_LEFT ||
       keyCode == HID_KEY_SHIFT_RIGHT) {
+    // TODO: Handle right shift separately.
     shiftPressed = down;
-
-    // TODO: Handle left and right shift separately.
-    if (down) {
-      modifierState |= KEYBOARD_MODIFIER_LEFTSHIFT;
-    } else {
-      modifierState &= ~KEYBOARD_MODIFIER_LEFTSHIFT;
-    }
+    updateModifierState(&modifierState, KEYBOARD_MODIFIER_LEFTSHIFT, down);
     return;
   }
 
-  // Handle the fn key locally.
+  // Handle the fn key locally, defaulting back to alt behaviour if there is no local behaviour.
   if (keyCode == HID_KEY_F1) {
     fnPressed = down;
+    updateModifierState(&modifierState, KEYBOARD_MODIFIER_LEFTALT, down);
     return;
   }
 
   if (keyCode == HID_KEY_GUI_LEFT) {
-    if (down) {
-      modifierState |= KEYBOARD_MODIFIER_LEFTGUI;
-    } else {
-      modifierState &= ~KEYBOARD_MODIFIER_LEFTGUI;
-    }
+    updateModifierState(&modifierState, KEYBOARD_MODIFIER_LEFTGUI, down);
     return;
   }
 
-  // Check to see if we have special case handling for the shift.
+  // Shift key.
   if (shiftPressed) {
     ModifierBehavior behavior;
     bool found = false;
@@ -153,8 +153,8 @@ void sendKey(uint8_t keyCode, bool down) {
     }
   }
 
-  // Check to see if we have special case handling for the shift.
-  if (fnPressed) {
+  // Function key.
+  if (modifierState & KEYBOARD_MODIFIER_LEFTALT) {
     ModifierBehavior behavior;
     bool found = false;
     for (int i = 0; i < FN_BEHAVIOR_COUNT; i++) {
