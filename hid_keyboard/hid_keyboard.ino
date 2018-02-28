@@ -24,7 +24,6 @@ int COLUMNS[] = {PIN_A0, PIN_A3, PIN_A4, 12, 14, 16, 20, 27, 26, 25, 30};
 #define MAX_ROWS 8
 int ROWS[] = {PIN_A1, PIN_A2, PIN_A5, 13, 8, 15, 7, 11};
 
-#define KEY_FN HID_KEY_B
 #define KEY_CTRL HID_KEY_B
 #define KEY_NONE HID_KEY_A
 
