@@ -24,7 +24,6 @@ int COLUMNS[] = {PIN_A0, PIN_A3, PIN_A4, 12, 14, 16, 20, 27, 26, 25, 30};
 #define MAX_ROWS 8
 int ROWS[] = {PIN_A1, PIN_A2, PIN_A5, 13, 8, 15, 7, 11};
 
-#define KEY_ESC HID_KEY_B
 #define KEY_FN HID_KEY_B
 #define KEY_CTRL HID_KEY_B
 #define KEY_NONE HID_KEY_A
@@ -43,7 +42,7 @@ static uint8_t CHARACTER_MAP[COL_COUNT][ROW_COUNT] = {
   { KEY_NONE,            HID_KEY_SHIFT_RIGHT, KEY_NONE,           KEY_CTRL,    KEY_NONE,  KEY_NONE,         KEY_NONE,       KEY_NONE,           },
   { KEY_NONE,            KEY_NONE,            HID_KEY_F1,         KEY_NONE,    KEY_NONE,  KEY_NONE,         KEY_NONE,       KEY_NONE,           },
   { KEY_NONE,            KEY_NONE,            KEY_NONE,           KEY_NONE,    KEY_NONE,  HID_KEY_GUI_LEFT, KEY_NONE,       KEY_NONE,           },
-  { KEY_NONE,            KEY_NONE,            KEY_NONE,           KEY_NONE,    KEY_NONE,  KEY_NONE,         HID_KEY_C,      KEY_NONE,           },
+  { KEY_NONE,            KEY_NONE,            KEY_NONE,           KEY_NONE,    KEY_NONE,  KEY_NONE,         HID_KEY_ESCAPE, KEY_NONE,           },
 };
 
 struct ModifierBehavior {
