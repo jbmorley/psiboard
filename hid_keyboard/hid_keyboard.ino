@@ -38,7 +38,7 @@ static uint8_t CHARACTER_MAP[COL_COUNT][ROW_COUNT] = {
   { HID_KEY_ARROW_RIGHT, HID_KEY_N,           HID_KEY_ARROW_DOWN, HID_KEY_G,            HID_KEY_6, HID_KEY_RETURN,   HID_KEY_Y,      HID_KEY_APOSTROPHE, },
   { HID_KEY_SHIFT_LEFT,  KEY_NONE,            KEY_NONE,           KEY_NONE,             KEY_NONE,  KEY_NONE,         KEY_NONE,       KEY_NONE,           },
   { KEY_NONE,            HID_KEY_SHIFT_RIGHT, KEY_NONE,           KEY_NONE,             KEY_NONE,  KEY_NONE,         KEY_NONE,       KEY_NONE,           },
-  { KEY_NONE,            KEY_NONE,            HID_KEY_F1,         HID_KEY_CONTROL_LEFT, KEY_NONE,  KEY_NONE,         KEY_NONE,       KEY_NONE,           },
+  { KEY_NONE,            KEY_NONE,            HID_KEY_ALT_LEFT,   HID_KEY_CONTROL_LEFT, KEY_NONE,  KEY_NONE,         KEY_NONE,       KEY_NONE,           },
   { KEY_NONE,            KEY_NONE,            KEY_NONE,           KEY_NONE,             KEY_NONE,  HID_KEY_GUI_LEFT, KEY_NONE,       KEY_NONE,           },
   { KEY_NONE,            KEY_NONE,            KEY_NONE,           KEY_NONE,             KEY_NONE,  KEY_NONE,         HID_KEY_ESCAPE, KEY_NONE,           },
 };
@@ -108,7 +108,7 @@ void sendKey(uint8_t keyCode, bool down) {
   }
 
   // Handle the fn key locally, defaulting back to alt behaviour if there is no local behaviour.
-  if (keyCode == HID_KEY_F1) {
+  if (keyCode == HID_KEY_ALT_LEFT) {
     fnPressed = down;
     updateModifierState(&modifierState, KEYBOARD_MODIFIER_LEFTALT, down);
     return;
