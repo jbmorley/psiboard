@@ -206,11 +206,11 @@ void setup()
   Bluefruit.begin();
   // Set max power. Accepted values are: -40, -30, -20, -16, -12, -8, -4, 0, 4
   Bluefruit.setTxPower(4);
-  Bluefruit.setName("Bluefruit52");
+  Bluefruit.setName("Psion Keyboard");
 
   // Configure and Start Device Information Service
-  bledis.setManufacturer("Adafruit Industries");
-  bledis.setModel("Bluefruit Feather 52");
+  bledis.setManufacturer("InSeven Limited");
+  bledis.setModel("Psion Keyboard");
   bledis.begin();
 
   /* Start BLE HID
