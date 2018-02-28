@@ -84,7 +84,6 @@ static ModifierBehavior FnBehavior[FN_BEHAVIOR_COUNT] = {
 
 static uint8_t keyboardState[COL_COUNT][ROW_COUNT] = { 0 };
 static bool shiftPressed = false;
-static bool fnPressed = false;
 
 static uint8_t modifierState = 0;
 
@@ -107,9 +106,7 @@ void sendKey(uint8_t keyCode, bool down) {
     return;
   }
 
-  // Handle the fn key locally, defaulting back to alt behaviour if there is no local behaviour.
   if (keyCode == HID_KEY_ALT_LEFT) {
-    fnPressed = down;
     updateModifierState(&modifierState, KEYBOARD_MODIFIER_LEFTALT, down);
     return;
   }
