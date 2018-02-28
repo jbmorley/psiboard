@@ -24,24 +24,23 @@ int COLUMNS[] = {PIN_A0, PIN_A3, PIN_A4, 12, 14, 16, 20, 27, 26, 25, 30};
 #define MAX_ROWS 8
 int ROWS[] = {PIN_A1, PIN_A2, PIN_A5, 13, 8, 15, 7, 11};
 
-#define KEY_CTRL HID_KEY_B
 #define KEY_NONE HID_KEY_A
 
 #define COL_COUNT 11
 #define ROW_COUNT 8
 
 static uint8_t CHARACTER_MAP[COL_COUNT][ROW_COUNT] = {
-  { KEY_NONE,            HID_KEY_Z,           HID_KEY_H,          HID_KEY_TAB, HID_KEY_1, HID_KEY_U,        HID_KEY_Q,      HID_KEY_7           },
-  { HID_KEY_SPACE,       HID_KEY_X,           HID_KEY_J,          HID_KEY_A,   HID_KEY_2, HID_KEY_I,        HID_KEY_W,      HID_KEY_8,          },
-  { HID_KEY_ARROW_UP,    HID_KEY_C,           HID_KEY_K,          HID_KEY_S,   HID_KEY_3, HID_KEY_O,        HID_KEY_E,      HID_KEY_9,          },
-  { HID_KEY_COMMA,       HID_KEY_V,           HID_KEY_M,          HID_KEY_D,   HID_KEY_4, HID_KEY_P,        HID_KEY_R,      HID_KEY_0,          },
-  { HID_KEY_ARROW_LEFT,  HID_KEY_B,           HID_KEY_PERIOD,     HID_KEY_F,   HID_KEY_5, HID_KEY_L,        HID_KEY_T,      HID_KEY_BACKSPACE,  },
-  { HID_KEY_ARROW_RIGHT, HID_KEY_N,           HID_KEY_ARROW_DOWN, HID_KEY_G,   HID_KEY_6, HID_KEY_RETURN,   HID_KEY_Y,      HID_KEY_APOSTROPHE, },
-  { HID_KEY_SHIFT_LEFT,  KEY_NONE,            KEY_NONE,           KEY_NONE,    KEY_NONE,  KEY_NONE,         KEY_NONE,       KEY_NONE,           },
-  { KEY_NONE,            HID_KEY_SHIFT_RIGHT, KEY_NONE,           KEY_CTRL,    KEY_NONE,  KEY_NONE,         KEY_NONE,       KEY_NONE,           },
-  { KEY_NONE,            KEY_NONE,            HID_KEY_F1,         KEY_NONE,    KEY_NONE,  KEY_NONE,         KEY_NONE,       KEY_NONE,           },
-  { KEY_NONE,            KEY_NONE,            KEY_NONE,           KEY_NONE,    KEY_NONE,  HID_KEY_GUI_LEFT, KEY_NONE,       KEY_NONE,           },
-  { KEY_NONE,            KEY_NONE,            KEY_NONE,           KEY_NONE,    KEY_NONE,  KEY_NONE,         HID_KEY_ESCAPE, KEY_NONE,           },
+  { KEY_NONE,            HID_KEY_Z,           HID_KEY_H,          HID_KEY_TAB,          HID_KEY_1, HID_KEY_U,        HID_KEY_Q,      HID_KEY_7           },
+  { HID_KEY_SPACE,       HID_KEY_X,           HID_KEY_J,          HID_KEY_A,            HID_KEY_2, HID_KEY_I,        HID_KEY_W,      HID_KEY_8,          },
+  { HID_KEY_ARROW_UP,    HID_KEY_C,           HID_KEY_K,          HID_KEY_S,            HID_KEY_3, HID_KEY_O,        HID_KEY_E,      HID_KEY_9,          },
+  { HID_KEY_COMMA,       HID_KEY_V,           HID_KEY_M,          HID_KEY_D,            HID_KEY_4, HID_KEY_P,        HID_KEY_R,      HID_KEY_0,          },
+  { HID_KEY_ARROW_LEFT,  HID_KEY_B,           HID_KEY_PERIOD,     HID_KEY_F,            HID_KEY_5, HID_KEY_L,        HID_KEY_T,      HID_KEY_BACKSPACE,  },
+  { HID_KEY_ARROW_RIGHT, HID_KEY_N,           HID_KEY_ARROW_DOWN, HID_KEY_G,            HID_KEY_6, HID_KEY_RETURN,   HID_KEY_Y,      HID_KEY_APOSTROPHE, },
+  { HID_KEY_SHIFT_LEFT,  KEY_NONE,            KEY_NONE,           KEY_NONE,             KEY_NONE,  KEY_NONE,         KEY_NONE,       KEY_NONE,           },
+  { KEY_NONE,            HID_KEY_SHIFT_RIGHT, KEY_NONE,           KEY_NONE,             KEY_NONE,  KEY_NONE,         KEY_NONE,       KEY_NONE,           },
+  { KEY_NONE,            KEY_NONE,            HID_KEY_F1,         HID_KEY_CONTROL_LEFT, KEY_NONE,  KEY_NONE,         KEY_NONE,       KEY_NONE,           },
+  { KEY_NONE,            KEY_NONE,            KEY_NONE,           KEY_NONE,             KEY_NONE,  HID_KEY_GUI_LEFT, KEY_NONE,       KEY_NONE,           },
+  { KEY_NONE,            KEY_NONE,            KEY_NONE,           KEY_NONE,             KEY_NONE,  KEY_NONE,         HID_KEY_ESCAPE, KEY_NONE,           },
 };
 
 struct ModifierBehavior {
@@ -117,6 +116,11 @@ void sendKey(uint8_t keyCode, bool down) {
 
   if (keyCode == HID_KEY_GUI_LEFT) {
     updateModifierState(&modifierState, KEYBOARD_MODIFIER_LEFTGUI, down);
+    return;
+  }
+
+  if (keyCode == HID_KEY_CONTROL_LEFT) {
+    updateModifierState(&modifierState, KEYBOARD_MODIFIER_LEFTCTRL, down);
     return;
   }
 
