@@ -16,8 +16,6 @@
 BLEDis bledis;
 BLEHidAdafruit blehid;
 
-bool hasKeyPressed = false;
-
 # define MAX_COLUMNS 11
 int COLUMNS[] = {PIN_A0, PIN_A3, PIN_A4, 12, 14, 16, 20, 27, 26, 25, 30};
 
@@ -194,9 +192,6 @@ void setup()
 
   Serial.println("Go to your phone's Bluetooth settings to pair your device");
   Serial.println("then open an application that accepts keyboard input");
-  Serial.println();
-  Serial.println("Enter the character(s) to send:");
-  Serial.println();
 
   Bluefruit.begin();
   // Set max power. Accepted values are: -40, -30, -20, -16, -12, -8, -4, 0, 4
@@ -268,31 +263,6 @@ void startAdv(void)
 
 void loop()
 {
-  // Only send KeyRelease if previously pressed to avoid sending
-  // multiple keyRelease reports (that consume memory and bandwidth)
-  if ( hasKeyPressed )
-  {
-    hasKeyPressed = false;
-    blehid.keyRelease();
-
-    // Delay a bit after a report
-    delay(5);
-  }
-
-  if (Serial.available())
-  {
-    char ch = (char) Serial.read();
-
-    // echo
-    Serial.write(ch);
-
-    blehid.keyPress(ch);
-    hasKeyPressed = true;
-
-    // Delay a bit after a report
-    delay(5);
-  }
-
   // Iterate over the columns, pulling each low in turn.
   for (int c = 0; c < MAX_COLUMNS; c++) {
     int column = COLUMNS[c];
