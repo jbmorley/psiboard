@@ -192,13 +192,8 @@ void setup()
 {
   Serial.begin(115200);
 
-  Serial.println("Bluefruit52 HID Keyboard Example");
-  Serial.println("--------------------------------\n");
-
-  Serial.println();
   Serial.println("Go to your phone's Bluetooth settings to pair your device");
   Serial.println("then open an application that accepts keyboard input");
-
   Serial.println();
   Serial.println("Enter the character(s) to send:");
   Serial.println();
