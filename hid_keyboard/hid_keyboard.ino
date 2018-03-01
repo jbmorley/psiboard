@@ -55,7 +55,7 @@ static ModifierBehavior ShiftBehavior[SHIFT_BEHAVIOR_COUNT] = {
   { .keyCode = HID_KEY_2,          .modifiedKeyCode = HID_KEY_NONE,  .modifiedCharacter = '"'  },
 };
 
-#define FN_BEHAVIOR_COUNT 22
+#define FN_BEHAVIOR_COUNT 23
 static ModifierBehavior FnBehavior[FN_BEHAVIOR_COUNT] = {
   { .keyCode = HID_KEY_Y,           .modifiedKeyCode = HID_KEY_KEYPAD_MULTIPLY, .modifiedCharacter = 0x00 },
   { .keyCode = HID_KEY_U,           .modifiedKeyCode = HID_KEY_KEYPAD_DIVIDE,   .modifiedCharacter = 0x00 },
@@ -78,6 +78,7 @@ static ModifierBehavior FnBehavior[FN_BEHAVIOR_COUNT] = {
   { .keyCode = HID_KEY_ARROW_RIGHT, .modifiedKeyCode = HID_KEY_END,             .modifiedCharacter = 0x00 }, // TODO: Doesn't seem to work.
   { .keyCode = HID_KEY_ARROW_UP,    .modifiedKeyCode = HID_KEY_PAGE_UP,         .modifiedCharacter = 0x00 }, // TODO: Doesn't seem to work.
   { .keyCode = HID_KEY_ARROW_DOWN,  .modifiedKeyCode = HID_KEY_PAGE_DOWN,       .modifiedCharacter = 0x00 }, // TODO: Doesn't seem to work.
+  { .keyCode = HID_KEY_TAB,         .modifiedKeyCode = HID_KEY_CAPS_LOCK,       .modifiedCharacter = 0x00 },
 };
 
 static uint8_t keyboardState[COL_COUNT][ROW_COUNT] = { 0 };
