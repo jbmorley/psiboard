@@ -41,44 +41,57 @@ static uint8_t CHARACTER_MAP[COL_COUNT][ROW_COUNT] = {
   { KEY_NONE,            KEY_NONE,            KEY_NONE,           KEY_NONE,             KEY_NONE,  KEY_NONE,         HID_KEY_ESCAPE, KEY_NONE,           },
 };
 
+typedef enum {
+  EventTypeKey,
+  EventTypeCharacter,
+  EventTypeConsumerKey,
+} EventType;
+
+struct Event {
+  EventType type;
+  uint16_t data;
+};
+
 struct ModifierBehavior {
   uint8_t keyCode;
-  uint8_t modifiedKeyCode;
-  char modifiedCharacter;
+  Event event;
 };
 
 #define SHIFT_BEHAVIOR_COUNT 4
 static ModifierBehavior ShiftBehavior[SHIFT_BEHAVIOR_COUNT] = {
-  { .keyCode = HID_KEY_COMMA,      .modifiedKeyCode = HID_KEY_SLASH, .modifiedCharacter = 0x00 },
-  { .keyCode = HID_KEY_PERIOD,     .modifiedKeyCode = HID_KEY_NONE,  .modifiedCharacter = '?'  },
-  { .keyCode = HID_KEY_APOSTROPHE, .modifiedKeyCode = HID_KEY_NONE,  .modifiedCharacter = '~'  },
-  { .keyCode = HID_KEY_2,          .modifiedKeyCode = HID_KEY_NONE,  .modifiedCharacter = '"'  },
+  { .keyCode = HID_KEY_COMMA,      .event = { .type = EventTypeKey,       .data = HID_KEY_SLASH } },
+  { .keyCode = HID_KEY_PERIOD,     .event = { .type = EventTypeCharacter, .data = '?' } },
+  { .keyCode = HID_KEY_APOSTROPHE, .event = { .type = EventTypeCharacter, .data = '~' } },
+  { .keyCode = HID_KEY_2,          .event = { .type = EventTypeCharacter, .data = '"' } },
 };
 
-#define FN_BEHAVIOR_COUNT 23
+#define FN_BEHAVIOR_COUNT 25
 static ModifierBehavior FnBehavior[FN_BEHAVIOR_COUNT] = {
-  { .keyCode = HID_KEY_Y,           .modifiedKeyCode = HID_KEY_KEYPAD_MULTIPLY, .modifiedCharacter = 0x00 },
-  { .keyCode = HID_KEY_U,           .modifiedKeyCode = HID_KEY_KEYPAD_DIVIDE,   .modifiedCharacter = 0x00 },
-  { .keyCode = HID_KEY_I,           .modifiedKeyCode = HID_KEY_KEYPAD_ADD,      .modifiedCharacter = 0x00 },
-  { .keyCode = HID_KEY_O,           .modifiedKeyCode = HID_KEY_KEYPAD_SUBTRACT, .modifiedCharacter = 0x00 },
-  { .keyCode = HID_KEY_P,           .modifiedKeyCode = HID_KEY_KEYPAD_EQUAL,    .modifiedCharacter = 0x00 },
-  { .keyCode = HID_KEY_1,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = '_'  },
-  { .keyCode = HID_KEY_2,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = '#'  }, // TODO: Enters £ on British layout.
-  { .keyCode = HID_KEY_3,           .modifiedKeyCode = HID_KEY_BACKSLASH,       .modifiedCharacter = 0x00 },
-  { .keyCode = HID_KEY_4,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = '@'  },
-  { .keyCode = HID_KEY_5,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = '<'  },
-  { .keyCode = HID_KEY_6,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = '>'  },
-  { .keyCode = HID_KEY_7,           .modifiedKeyCode = HID_KEY_BRACKET_LEFT,    .modifiedCharacter = 0x00 },
-  { .keyCode = HID_KEY_8,           .modifiedKeyCode = HID_KEY_BRACKET_RIGHT,   .modifiedCharacter = 0x00 },
-  { .keyCode = HID_KEY_9,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = '{'  },
-  { .keyCode = HID_KEY_0,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = '}'  },
-  { .keyCode = HID_KEY_L,           .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = ';'  },
-  { .keyCode = HID_KEY_APOSTROPHE,  .modifiedKeyCode = HID_KEY_NONE,            .modifiedCharacter = ':'  },
-  { .keyCode = HID_KEY_ARROW_LEFT,  .modifiedKeyCode = HID_KEY_HOME,            .modifiedCharacter = 0x00 }, // TODO: Doesn't seem to work.
-  { .keyCode = HID_KEY_ARROW_RIGHT, .modifiedKeyCode = HID_KEY_END,             .modifiedCharacter = 0x00 }, // TODO: Doesn't seem to work.
-  { .keyCode = HID_KEY_ARROW_UP,    .modifiedKeyCode = HID_KEY_PAGE_UP,         .modifiedCharacter = 0x00 }, // TODO: Doesn't seem to work.
-  { .keyCode = HID_KEY_ARROW_DOWN,  .modifiedKeyCode = HID_KEY_PAGE_DOWN,       .modifiedCharacter = 0x00 }, // TODO: Doesn't seem to work.
-  { .keyCode = HID_KEY_TAB,         .modifiedKeyCode = HID_KEY_CAPS_LOCK,       .modifiedCharacter = 0x00 },
+  { .keyCode = HID_KEY_Y,           .event = { .type = EventTypeKey,         .data = HID_KEY_KEYPAD_MULTIPLY                 } },
+  { .keyCode = HID_KEY_U,           .event = { .type = EventTypeKey,         .data = HID_KEY_KEYPAD_DIVIDE                   } },
+  { .keyCode = HID_KEY_I,           .event = { .type = EventTypeKey,         .data = HID_KEY_KEYPAD_ADD                      } },
+  { .keyCode = HID_KEY_O,           .event = { .type = EventTypeKey,         .data = HID_KEY_KEYPAD_SUBTRACT                 } },
+  { .keyCode = HID_KEY_P,           .event = { .type = EventTypeKey,         .data = HID_KEY_KEYPAD_EQUAL                    } },
+  { .keyCode = HID_KEY_1,           .event = { .type = EventTypeCharacter,   .data = '_'                                     } },
+  { .keyCode = HID_KEY_2,           .event = { .type = EventTypeCharacter,   .data = '#'                                     } },
+  { .keyCode = HID_KEY_3,           .event = { .type = EventTypeKey,         .data = HID_KEY_BACKSLASH                       } },
+  { .keyCode = HID_KEY_4,           .event = { .type = EventTypeCharacter,   .data = '@'                                     } },
+  { .keyCode = HID_KEY_5,           .event = { .type = EventTypeCharacter,   .data = '<'                                     } },
+  { .keyCode = HID_KEY_6,           .event = { .type = EventTypeCharacter,   .data = '>'                                     } },
+  { .keyCode = HID_KEY_7,           .event = { .type = EventTypeKey,         .data = HID_KEY_BRACKET_LEFT                    } },
+  { .keyCode = HID_KEY_8,           .event = { .type = EventTypeKey,         .data = HID_KEY_BRACKET_RIGHT                   } },
+  { .keyCode = HID_KEY_9,           .event = { .type = EventTypeCharacter,   .data = '{'                                     } },
+  { .keyCode = HID_KEY_0,           .event = { .type = EventTypeCharacter,   .data = '}'                                     } },
+  { .keyCode = HID_KEY_L,           .event = { .type = EventTypeCharacter,   .data = ';'                                     } },
+  { .keyCode = HID_KEY_APOSTROPHE,  .event = { .type = EventTypeCharacter,   .data = ':'                                     } },
+  { .keyCode = HID_KEY_ARROW_LEFT,  .event = { .type = EventTypeKey,         .data = HID_KEY_HOME                            } },
+  { .keyCode = HID_KEY_ARROW_RIGHT, .event = { .type = EventTypeKey,         .data = HID_KEY_END                             } },
+  { .keyCode = HID_KEY_ARROW_UP,    .event = { .type = EventTypeKey,         .data = HID_KEY_PAGE_UP                         } },
+  { .keyCode = HID_KEY_ARROW_DOWN,  .event = { .type = EventTypeKey,         .data = HID_KEY_PAGE_DOWN                       } },
+  { .keyCode = HID_KEY_TAB,         .event = { .type = EventTypeKey,         .data = HID_KEY_CAPS_LOCK                       } },
+  { .keyCode = HID_KEY_M,           .event = { .type = EventTypeConsumerKey, .data = HID_USAGE_CONSUMER_BRIGHTNESS_DECREMENT } },
+  { .keyCode = HID_KEY_PERIOD,      .event = { .type = EventTypeConsumerKey, .data = HID_USAGE_CONSUMER_BRIGHTNESS_INCREMENT } },
+  { .keyCode = HID_KEY_ESCAPE,      .event = { .type = EventTypeConsumerKey, .data = HID_USAGE_CONSUMER_POWER                } },
 };
 
 static uint8_t keyboardState[COL_COUNT][ROW_COUNT] = { 0 };
@@ -91,6 +104,28 @@ void updateModifierState(uint8_t *modifierState, uint8_t modifier, bool down) {
     *modifierState |= modifier;
   } else {
     *modifierState &= ~modifier;
+  }
+}
+
+void sendEvent(Event event, bool down) {
+  if (event.type == EventTypeKey) {
+    if (down) {
+      blehid.keyboardReport(0, event.data);
+    } else {
+      blehid.keyRelease();
+    }
+  } else if (event.type == EventTypeCharacter) {
+    if (down) {
+      blehid.keyPress(event.data);
+    } else {
+      blehid.keyRelease();
+    }
+  } else if (event.type == EventTypeConsumerKey) {
+    if (down) { 
+      blehid.consumerKeyPress(event.data);
+    } else {
+      blehid.consumerKeyRelease();
+    }
   }
 }
 
@@ -133,19 +168,7 @@ void sendKey(uint8_t keyCode, bool down) {
       }
     }
     if (found) {
-      if (behavior.modifiedKeyCode) {
-        if (down) {
-          blehid.keyboardReport(0, behavior.modifiedKeyCode);
-        } else {
-          blehid.keyRelease();
-        }
-      } else {
-        if (down) {
-          blehid.keyPress(behavior.modifiedCharacter);
-        } else {
-          blehid.keyRelease();
-        }        
-      }
+      sendEvent(behavior.event, down);
       return;
     }
   }
@@ -163,19 +186,7 @@ void sendKey(uint8_t keyCode, bool down) {
       }
     }
     if (found) {
-      if (behavior.modifiedKeyCode) {
-        if (down) {
-          blehid.keyboardReport(0, behavior.modifiedKeyCode);
-        } else {
-          blehid.keyRelease();
-        }
-      } else {
-        if (down) {
-          blehid.keyPress(behavior.modifiedCharacter);
-        } else {
-          blehid.keyRelease();
-        }        
-      }
+      sendEvent(behavior.event, down);
       return;
     }
   }
