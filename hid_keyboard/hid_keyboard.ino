@@ -17,7 +17,7 @@ BLEDis bledis;
 BLEHidAdafruit blehid;
 
 # define MAX_COLUMNS 11
-int COLUMNS[] = {PIN_A0, PIN_A3, PIN_A4, 12, 14, 16, 20, 27, 26, 25, 30};
+int COLUMNS[] = {PIN_A0, PIN_A3, PIN_A4, 12, 14, 16, 6, 27, 26, 25, 30};
 
 #define MAX_ROWS 8
 int ROWS[] = {PIN_A1, PIN_A2, PIN_A5, 13, 8, 15, 7, 11};
@@ -179,11 +179,6 @@ void sendKey(uint8_t keyCode, bool down) {
 
 void setup()
 {
-  Serial.begin(115200);
-
-  Serial.println("Go to your phone's Bluetooth settings to pair your device");
-  Serial.println("then open an application that accepts keyboard input");
-
   Bluefruit.begin();
   // Set max power. Accepted values are: -40, -30, -20, -16, -12, -8, -4, 0, 4
   Bluefruit.setTxPower(4);
