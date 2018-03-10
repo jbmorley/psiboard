@@ -1,2 +1,3 @@
-# psion-keyboard
-Psion Series 5 keyboard support
+# PsiBoard
+
+Psion Series 5 Bluetooth keyboard
