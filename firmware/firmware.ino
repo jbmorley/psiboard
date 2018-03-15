@@ -57,7 +57,7 @@ struct ModifierBehavior {
   Event event;
 };
 
-#define SHIFT_BEHAVIOR_COUNT 29
+#define SHIFT_BEHAVIOR_COUNT 25
 static ModifierBehavior ShiftBehavior[SHIFT_BEHAVIOR_COUNT] = {
   { .modifiers = KEYBOARD_MODIFIER_LEFTSHIFT | KEYBOARD_MODIFIER_RIGHTSHIFT, .keyCode = HID_KEY_COMMA,       .event = { .type = EventTypeKey,         .data = HID_KEY_SLASH } },
   { .modifiers = KEYBOARD_MODIFIER_LEFTSHIFT | KEYBOARD_MODIFIER_RIGHTSHIFT, .keyCode = HID_KEY_PERIOD,      .event = { .type = EventTypeCharacter,   .data = '?'           } },
@@ -80,10 +80,10 @@ static ModifierBehavior ShiftBehavior[SHIFT_BEHAVIOR_COUNT] = {
   { .modifiers = KEYBOARD_MODIFIER_LEFTALT,                                  .keyCode = HID_KEY_0,           .event = { .type = EventTypeCharacter,   .data = '}'                                     } },
   { .modifiers = KEYBOARD_MODIFIER_LEFTALT,                                  .keyCode = HID_KEY_L,           .event = { .type = EventTypeCharacter,   .data = ';'                                     } },
   { .modifiers = KEYBOARD_MODIFIER_LEFTALT,                                  .keyCode = HID_KEY_APOSTROPHE,  .event = { .type = EventTypeCharacter,   .data = ':'                                     } },
-  { .modifiers = KEYBOARD_MODIFIER_LEFTALT,                                  .keyCode = HID_KEY_ARROW_LEFT,  .event = { .type = EventTypeKey,         .data = HID_KEY_HOME                            } },
-  { .modifiers = KEYBOARD_MODIFIER_LEFTALT,                                  .keyCode = HID_KEY_ARROW_RIGHT, .event = { .type = EventTypeKey,         .data = HID_KEY_END                             } },
-  { .modifiers = KEYBOARD_MODIFIER_LEFTALT,                                  .keyCode = HID_KEY_ARROW_UP,    .event = { .type = EventTypeKey,         .data = HID_KEY_PAGE_UP                         } },
-  { .modifiers = KEYBOARD_MODIFIER_LEFTALT,                                  .keyCode = HID_KEY_ARROW_DOWN,  .event = { .type = EventTypeKey,         .data = HID_KEY_PAGE_DOWN                       } },
+//  { .modifiers = KEYBOARD_MODIFIER_LEFTALT,                                  .keyCode = HID_KEY_ARROW_LEFT,  .event = { .type = EventTypeKey,         .data = HID_KEY_HOME                            } },
+//  { .modifiers = KEYBOARD_MODIFIER_LEFTALT,                                  .keyCode = HID_KEY_ARROW_RIGHT, .event = { .type = EventTypeKey,         .data = HID_KEY_END                             } },
+//  { .modifiers = KEYBOARD_MODIFIER_LEFTALT,                                  .keyCode = HID_KEY_ARROW_UP,    .event = { .type = EventTypeKey,         .data = HID_KEY_PAGE_UP                         } },
+//  { .modifiers = KEYBOARD_MODIFIER_LEFTALT,                                  .keyCode = HID_KEY_ARROW_DOWN,  .event = { .type = EventTypeKey,         .data = HID_KEY_PAGE_DOWN                       } },
   { .modifiers = KEYBOARD_MODIFIER_LEFTALT,                                  .keyCode = HID_KEY_TAB,         .event = { .type = EventTypeKey,         .data = HID_KEY_CAPS_LOCK                       } },
   { .modifiers = KEYBOARD_MODIFIER_LEFTALT,                                  .keyCode = HID_KEY_M,           .event = { .type = EventTypeConsumerKey, .data = HID_USAGE_CONSUMER_BRIGHTNESS_DECREMENT } },
   { .modifiers = KEYBOARD_MODIFIER_LEFTALT,                                  .keyCode = HID_KEY_PERIOD,      .event = { .type = EventTypeConsumerKey, .data = HID_USAGE_CONSUMER_BRIGHTNESS_INCREMENT } },
