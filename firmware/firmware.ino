@@ -17,10 +17,9 @@ BLEDis bledis;
 BLEHidAdafruit blehid;
 
 # define MAX_COLUMNS 11
-int COLUMNS[] = {PIN_A0, PIN_A3, PIN_A4, 12, 14, 16, 6, 27, 26, 25, 30};
-
+int COLUMNS[] = {PIN_A5, PIN_A1, PIN_A0, 16, 15, 7, 11, 30, 25, 27, 26};
 #define MAX_ROWS 8
-int ROWS[] = {PIN_A1, PIN_A2, PIN_A5, 13, 8, 15, 7, 11};
+int ROWS[] = {6, 8, 14, 13, 12, PIN_A4, PIN_A3, PIN_A2};
 
 #define KEY_NONE HID_KEY_A
 
@@ -132,7 +131,7 @@ void sendKey(uint8_t keyCode, bool down) {
     return;
   }
 
-  if (keyCode == HID_KEY_SHIFT_LEFT) {
+  if (keyCode == HID_KEY_SHIFT_RIGHT) {
     updateModifierState(&modifierState, KEYBOARD_MODIFIER_RIGHTSHIFT, down);
     return;
   }
