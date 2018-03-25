@@ -167,6 +167,10 @@
 <circle x="100.33" y="20.32" radius="1.27" width="0.1524" layer="20"/>
 <circle x="100.33" y="2.54" radius="1.27" width="0.1524" layer="20"/>
 <text x="40.005" y="13.97" size="1.4224" layer="21">USB</text>
+<hole x="2.54" y="2.54" drill="2.54"/>
+<hole x="2.54" y="20.32" drill="2.54"/>
+<hole x="49.53" y="2.54" drill="2.54"/>
+<hole x="49.53" y="20.32" drill="2.54"/>
 </plain>
 <libraries>
 <library name="adafruit" urn="urn:adsk.eagle:library:420">
