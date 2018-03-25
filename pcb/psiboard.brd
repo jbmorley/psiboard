@@ -494,7 +494,7 @@ design rules under a new name.</description>
 <pass name="Default">
 <param name="RoutingGrid" value="50mil"/>
 <param name="AutoGrid" value="1"/>
-<param name="Efforts" value="0"/>
+<param name="Efforts" value="2"/>
 <param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
 <param name="PrefDir.1" value="a"/>
@@ -601,74 +601,152 @@ design rules under a new name.</description>
 <signal name="25">
 <contactref element="FEATHER" pad="17"/>
 <contactref element="KEYBOARD" pad="21"/>
-<wire x1="17.45" y1="16.47" x2="58.42" y2="21.59" width="0" layer="19" extent="1-1"/>
+<wire x1="17.526" y1="17.0688" x2="17.526" y2="16.6116" width="0.1524" layer="1"/>
+<wire x1="21.0312" y1="20.574" x2="17.526" y2="17.0688" width="0.1524" layer="1"/>
+<wire x1="34.7472" y1="20.574" x2="21.0312" y2="20.574" width="0.1524" layer="1"/>
+<wire x1="37.338" y1="17.9832" x2="34.7472" y2="20.574" width="0.1524" layer="1"/>
+<wire x1="37.338" y1="16.4592" x2="37.338" y2="17.9832" width="0.1524" layer="1"/>
+<wire x1="37.9476" y1="15.8496" x2="37.338" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="53.4924" y1="15.8496" x2="37.9476" y2="15.8496" width="0.1524" layer="1"/>
+<wire x1="58.3692" y1="20.7264" x2="53.4924" y2="15.8496" width="0.1524" layer="1"/>
+<wire x1="58.3692" y1="21.4884" x2="58.3692" y2="20.7264" width="0.1524" layer="1"/>
+<wire x1="17.526" y1="16.6116" x2="17.45" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="58.3692" y1="21.4884" x2="58.42" y2="21.59" width="0.1524" layer="1"/>
 </signal>
 <signal name="26">
 <contactref element="FEATHER" pad="18"/>
 <contactref element="KEYBOARD" pad="20"/>
-<wire x1="16.95" y1="16.47" x2="60.96" y2="21.59" width="0" layer="19" extent="1-1"/>
+<wire x1="17.0688" y1="15.8496" x2="17.0688" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="17.2212" y1="15.6972" x2="17.0688" y2="15.8496" width="0.1524" layer="1"/>
+<wire x1="18.5928" y1="15.6972" x2="17.2212" y2="15.6972" width="0.1524" layer="1"/>
+<wire x1="19.2024" y1="16.3068" x2="18.5928" y2="15.6972" width="0.1524" layer="1"/>
+<wire x1="37.0332" y1="16.3068" x2="19.2024" y2="16.3068" width="0.1524" layer="1"/>
+<wire x1="37.7952" y1="15.5448" x2="37.0332" y2="16.3068" width="0.1524" layer="1"/>
+<wire x1="55.0164" y1="15.5448" x2="37.7952" y2="15.5448" width="0.1524" layer="1"/>
+<wire x1="60.96" y1="21.4884" x2="55.0164" y2="15.5448" width="0.1524" layer="1"/>
+<wire x1="17.0688" y1="16.4592" x2="16.95" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="60.96" y1="21.4884" x2="60.96" y2="21.59" width="0.1524" layer="1"/>
 </signal>
 <signal name="27">
 <contactref element="FEATHER" pad="19"/>
 <contactref element="KEYBOARD" pad="19"/>
-<wire x1="16.45" y1="16.47" x2="63.5" y2="21.59" width="0" layer="19" extent="1-1"/>
+<wire x1="16.4592" y1="15.24" x2="16.4592" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="19.05" y1="12.6492" x2="16.4592" y2="15.24" width="0.1524" layer="1"/>
+<wire x1="54.5592" y1="12.6492" x2="19.05" y2="12.6492" width="0.1524" layer="1"/>
+<wire x1="63.5" y1="21.59" x2="54.5592" y2="12.6492" width="0.1524" layer="1"/>
+<wire x1="16.4592" y1="16.4592" x2="16.45" y2="16.47" width="0.1524" layer="1"/>
 </signal>
 <signal name="30">
 <contactref element="FEATHER" pad="20"/>
 <contactref element="KEYBOARD" pad="18"/>
-<wire x1="15.95" y1="16.47" x2="66.04" y2="21.59" width="0" layer="19" extent="1-1"/>
+<wire x1="16.002" y1="15.24" x2="16.002" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="18.8976" y1="12.3444" x2="16.002" y2="15.24" width="0.1524" layer="1"/>
+<wire x1="56.8452" y1="12.3444" x2="18.8976" y2="12.3444" width="0.1524" layer="1"/>
+<wire x1="65.9892" y1="21.4884" x2="56.8452" y2="12.3444" width="0.1524" layer="1"/>
+<wire x1="16.002" y1="16.4592" x2="15.95" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="65.9892" y1="21.4884" x2="66.04" y2="21.59" width="0.1524" layer="1"/>
 </signal>
 <signal name="11">
 <contactref element="FEATHER" pad="22"/>
 <contactref element="KEYBOARD" pad="17"/>
-<wire x1="15.45" y1="16.47" x2="71.12" y2="21.59" width="0" layer="19" extent="1-1"/>
+<wire x1="15.5448" y1="15.24" x2="15.5448" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="18.7452" y1="12.0396" x2="15.5448" y2="15.24" width="0.1524" layer="1"/>
+<wire x1="61.5696" y1="12.0396" x2="18.7452" y2="12.0396" width="0.1524" layer="1"/>
+<wire x1="71.12" y1="21.59" x2="61.5696" y2="12.0396" width="0.1524" layer="1"/>
+<wire x1="15.5448" y1="16.4592" x2="15.45" y2="16.47" width="0.1524" layer="1"/>
 </signal>
 <signal name="7">
 <contactref element="FEATHER" pad="23"/>
 <contactref element="KEYBOARD" pad="16"/>
-<wire x1="14.95" y1="16.47" x2="73.66" y2="21.59" width="0" layer="19" extent="1-1"/>
+<wire x1="14.9352" y1="15.3924" x2="14.9352" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="18.5928" y1="11.7348" x2="14.9352" y2="15.3924" width="0.1524" layer="1"/>
+<wire x1="63.8556" y1="11.7348" x2="18.5928" y2="11.7348" width="0.1524" layer="1"/>
+<wire x1="73.6092" y1="21.4884" x2="63.8556" y2="11.7348" width="0.1524" layer="1"/>
+<wire x1="14.9352" y1="16.4592" x2="14.95" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="73.6092" y1="21.4884" x2="73.66" y2="21.59" width="0.1524" layer="1"/>
 </signal>
 <signal name="15">
 <contactref element="FEATHER" pad="24"/>
 <contactref element="KEYBOARD" pad="15"/>
-<wire x1="14.45" y1="16.47" x2="76.2" y2="21.59" width="0" layer="19" extent="1-1"/>
+<wire x1="14.478" y1="15.3924" x2="14.478" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="18.7452" y1="11.1252" x2="14.478" y2="15.3924" width="0.1524" layer="1"/>
+<wire x1="38.4048" y1="11.1252" x2="18.7452" y2="11.1252" width="0.1524" layer="1"/>
+<wire x1="65.8368" y1="11.1252" x2="38.4048" y2="11.1252" width="0.1524" layer="16"/>
+<wire x1="76.2" y1="21.4884" x2="65.8368" y2="11.1252" width="0.1524" layer="16"/>
+<wire x1="14.478" y1="16.4592" x2="14.45" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="76.2" y1="21.4884" x2="76.2" y2="21.59" width="0.1524" layer="16"/>
+<via x="38.4048" y="11.1252" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="16">
 <contactref element="FEATHER" pad="25"/>
 <contactref element="KEYBOARD" pad="14"/>
-<wire x1="13.95" y1="16.47" x2="78.74" y2="21.59" width="0" layer="19" extent="1-1"/>
+<wire x1="14.0208" y1="14.9352" x2="14.0208" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="19.05" y1="9.906" x2="14.0208" y2="14.9352" width="0.1524" layer="1"/>
+<wire x1="67.056" y1="9.906" x2="19.05" y2="9.906" width="0.1524" layer="1"/>
+<wire x1="78.74" y1="21.59" x2="67.056" y2="9.906" width="0.1524" layer="1"/>
+<wire x1="14.0208" y1="16.4592" x2="13.95" y2="16.47" width="0.1524" layer="1"/>
 </signal>
 <signal name="USB">
 <contactref element="FEATHER" pad="26"/>
 <contactref element="U$1" pad="VCC"/>
-<wire x1="81.28" y1="21.59" x2="43.21" y2="17.195" width="0" layer="19" extent="1-1"/>
+<wire x1="43.21" y1="17.195" x2="81.28" y2="21.59" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="EN">
 <contactref element="FEATHER" pad="27"/>
 <contactref element="SWITCH" pad="2"/>
-<wire x1="29.21" y1="19.05" x2="83.82" y2="21.59" width="0" layer="19" extent="1-1"/>
+<wire x1="29.2608" y1="13.4112" x2="29.2608" y2="19.05" width="0.1524" layer="16"/>
+<wire x1="32.1564" y1="10.5156" x2="29.2608" y2="13.4112" width="0.1524" layer="16"/>
+<wire x1="72.8472" y1="10.5156" x2="32.1564" y2="10.5156" width="0.1524" layer="16"/>
+<wire x1="83.82" y1="21.4884" x2="72.8472" y2="10.5156" width="0.1524" layer="16"/>
+<wire x1="29.2608" y1="19.05" x2="29.21" y2="19.05" width="0.1524" layer="16"/>
+<wire x1="83.82" y1="21.4884" x2="83.82" y2="21.59" width="0.1524" layer="16"/>
 </signal>
 <signal name="6">
 <contactref element="FEATHER" pad="15"/>
 <contactref element="KEYBOARD" pad="2"/>
 <contactref element="KEYBOARD" pad="5"/>
-<wire x1="9.45" y1="16.47" x2="60.96" y2="1.27" width="0" layer="19" extent="1-1"/>
-<wire x1="7.95" y1="16.47" x2="9.45" y2="16.47" width="0" layer="19" extent="1-1"/>
+<wire x1="7.9248" y1="16.9164" x2="7.9248" y2="16.6116" width="0.1524" layer="1"/>
+<wire x1="8.2296" y1="17.2212" x2="7.9248" y2="16.9164" width="0.1524" layer="1"/>
+<wire x1="9.144" y1="17.2212" x2="8.2296" y2="17.2212" width="0.1524" layer="1"/>
+<wire x1="9.4488" y1="16.9164" x2="9.144" y2="17.2212" width="0.1524" layer="1"/>
+<wire x1="9.4488" y1="16.6116" x2="9.4488" y2="16.9164" width="0.1524" layer="1"/>
+<wire x1="7.9248" y1="16.6116" x2="7.95" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="9.4488" y1="16.6116" x2="9.45" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="7.9248" y1="16.002" x2="7.9248" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="18.8976" y1="5.0292" x2="7.9248" y2="16.002" width="0.1524" layer="1"/>
+<wire x1="57.3024" y1="5.0292" x2="18.8976" y2="5.0292" width="0.1524" layer="1"/>
+<wire x1="60.96" y1="1.3716" x2="57.3024" y2="5.0292" width="0.1524" layer="1"/>
+<wire x1="7.9248" y1="16.4592" x2="7.95" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="60.96" y1="1.3716" x2="60.96" y2="1.27" width="0.1524" layer="1"/>
 </signal>
 <signal name="8">
 <contactref element="FEATHER" pad="14"/>
 <contactref element="KEYBOARD" pad="3"/>
-<wire x1="8.45" y1="16.47" x2="63.5" y2="1.27" width="0" layer="19" extent="1-1"/>
+<wire x1="8.5344" y1="16.002" x2="8.5344" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="19.2024" y1="5.334" x2="8.5344" y2="16.002" width="0.1524" layer="1"/>
+<wire x1="59.436" y1="5.334" x2="19.2024" y2="5.334" width="0.1524" layer="1"/>
+<wire x1="63.5" y1="1.27" x2="59.436" y2="5.334" width="0.1524" layer="1"/>
+<wire x1="8.5344" y1="16.4592" x2="8.45" y2="16.47" width="0.1524" layer="1"/>
 </signal>
 <signal name="14">
 <contactref element="FEATHER" pad="13"/>
 <contactref element="KEYBOARD" pad="4"/>
-<wire x1="8.95" y1="16.47" x2="66.04" y2="1.27" width="0" layer="19" extent="1-1"/>
+<wire x1="8.9916" y1="16.002" x2="8.9916" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="19.3548" y1="5.6388" x2="8.9916" y2="16.002" width="0.1524" layer="1"/>
+<wire x1="61.722" y1="5.6388" x2="19.3548" y2="5.6388" width="0.1524" layer="1"/>
+<wire x1="65.9892" y1="1.3716" x2="61.722" y2="5.6388" width="0.1524" layer="1"/>
+<wire x1="8.9916" y1="16.4592" x2="8.95" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="65.9892" y1="1.3716" x2="66.04" y2="1.27" width="0.1524" layer="1"/>
 </signal>
 <signal name="13">
 <contactref element="FEATHER" pad="12"/>
 <contactref element="KEYBOARD" pad="6"/>
-<wire x1="9.95" y1="16.47" x2="68.58" y2="1.27" width="0" layer="19" extent="1-1"/>
+<wire x1="10.0584" y1="15.8496" x2="10.0584" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="19.9644" y1="5.9436" x2="10.0584" y2="15.8496" width="0.1524" layer="1"/>
+<wire x1="64.008" y1="5.9436" x2="19.9644" y2="5.9436" width="0.1524" layer="1"/>
+<wire x1="68.58" y1="1.3716" x2="64.008" y2="5.9436" width="0.1524" layer="1"/>
+<wire x1="10.0584" y1="16.4592" x2="9.95" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="68.58" y1="1.3716" x2="68.58" y2="1.27" width="0.1524" layer="1"/>
 </signal>
 <signal name="GND">
 <contactref element="FEATHER" pad="4"/>
@@ -676,45 +754,102 @@ design rules under a new name.</description>
 <contactref element="KEYBOARD" pad="1"/>
 <contactref element="KEYBOARD" pad="22"/>
 <contactref element="U$1" pad="GND" route="any" routetag="G$1.GND"/>
-<wire x1="88.9" y1="1.27" x2="40.61" y2="17.195" width="0" layer="19" extent="1-1"/>
-<wire x1="7.45" y1="16.47" x2="88.9" y2="1.27" width="0" layer="19" extent="1-1"/>
-<wire x1="17.95" y1="16.47" x2="7.45" y2="16.47" width="0" layer="19" extent="1-1"/>
-<wire x1="27.31" y1="19.05" x2="17.95" y2="16.47" width="0" layer="19" extent="1-1"/>
+<wire x1="7.4676" y1="16.9164" x2="7.4676" y2="16.6116" width="0.1524" layer="1"/>
+<wire x1="11.1252" y1="20.574" x2="7.4676" y2="16.9164" width="0.1524" layer="1"/>
+<wire x1="25.7556" y1="20.574" x2="11.1252" y2="20.574" width="0.1524" layer="16"/>
+<wire x1="27.2796" y1="19.05" x2="25.7556" y2="20.574" width="0.1524" layer="16"/>
+<wire x1="7.4676" y1="16.6116" x2="7.45" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="27.2796" y1="19.05" x2="27.31" y2="19.05" width="0.1524" layer="16"/>
+<wire x1="24.8412" y1="16.6116" x2="17.9832" y2="16.6116" width="0.1524" layer="1"/>
+<wire x1="27.2796" y1="19.05" x2="24.8412" y2="16.6116" width="0.1524" layer="1"/>
+<wire x1="17.9832" y1="16.6116" x2="17.95" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="27.2796" y1="19.05" x2="27.31" y2="19.05" width="0.1524" layer="1"/>
+<wire x1="87.9348" y1="1.3716" x2="88.8492" y2="1.3716" width="0.1524" layer="16"/>
+<wire x1="79.0956" y1="10.2108" x2="87.9348" y2="1.3716" width="0.1524" layer="16"/>
+<wire x1="32.004" y1="10.2108" x2="79.0956" y2="10.2108" width="0.1524" layer="16"/>
+<wire x1="27.432" y1="14.7828" x2="32.004" y2="10.2108" width="0.1524" layer="16"/>
+<wire x1="27.432" y1="19.05" x2="27.432" y2="14.7828" width="0.1524" layer="16"/>
+<wire x1="88.8492" y1="1.3716" x2="88.9" y2="1.27" width="0.1524" layer="16"/>
+<wire x1="27.432" y1="19.05" x2="27.31" y2="19.05" width="0.1524" layer="16"/>
+<via x="11.1252" y="20.574" extent="1-16" drill="0.35"/>
+<wire x1="32.004" y1="10.2108" x2="40.61" y2="17.195" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="2">
 <contactref element="FEATHER" pad="5"/>
 <contactref element="KEYBOARD" pad="13"/>
-<wire x1="13.45" y1="16.47" x2="86.36" y2="1.27" width="0" layer="19" extent="1-1"/>
+<wire x1="13.5636" y1="14.9352" x2="13.5636" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="20.4216" y1="8.0772" x2="13.5636" y2="14.9352" width="0.1524" layer="1"/>
+<wire x1="79.5528" y1="8.0772" x2="20.4216" y2="8.0772" width="0.1524" layer="1"/>
+<wire x1="86.36" y1="1.27" x2="79.5528" y2="8.0772" width="0.1524" layer="1"/>
+<wire x1="13.5636" y1="16.4592" x2="13.45" y2="16.47" width="0.1524" layer="1"/>
 </signal>
 <signal name="3">
 <contactref element="FEATHER" pad="6"/>
 <contactref element="KEYBOARD" pad="12"/>
-<wire x1="12.95" y1="16.47" x2="83.82" y2="1.27" width="0" layer="19" extent="1-1"/>
+<wire x1="12.954" y1="16.9164" x2="12.954" y2="16.6116" width="0.1524" layer="1"/>
+<wire x1="14.1732" y1="18.1356" x2="12.954" y2="16.9164" width="0.1524" layer="1"/>
+<wire x1="22.2504" y1="18.1356" x2="14.1732" y2="18.1356" width="0.1524" layer="16"/>
+<wire x1="32.9184" y1="7.4676" x2="22.2504" y2="18.1356" width="0.1524" layer="16"/>
+<wire x1="77.724" y1="7.4676" x2="32.9184" y2="7.4676" width="0.1524" layer="1"/>
+<wire x1="83.82" y1="1.3716" x2="77.724" y2="7.4676" width="0.1524" layer="1"/>
+<wire x1="12.954" y1="16.6116" x2="12.95" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="83.82" y1="1.3716" x2="83.82" y2="1.27" width="0.1524" layer="1"/>
+<via x="14.1732" y="18.1356" extent="1-16" drill="0.35"/>
+<via x="32.9184" y="7.4676" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="4">
 <contactref element="FEATHER" pad="7"/>
 <contactref element="KEYBOARD" pad="11"/>
-<wire x1="12.45" y1="16.47" x2="81.28" y2="1.27" width="0" layer="19" extent="1-1"/>
+<wire x1="12.4968" y1="15.5448" x2="12.4968" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="21.1836" y1="6.858" x2="12.4968" y2="15.5448" width="0.1524" layer="1"/>
+<wire x1="75.7428" y1="6.858" x2="21.1836" y2="6.858" width="0.1524" layer="1"/>
+<wire x1="81.2292" y1="1.3716" x2="75.7428" y2="6.858" width="0.1524" layer="1"/>
+<wire x1="12.4968" y1="16.4592" x2="12.45" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="81.2292" y1="1.3716" x2="81.28" y2="1.27" width="0.1524" layer="1"/>
 </signal>
 <signal name="5">
 <contactref element="FEATHER" pad="8"/>
 <contactref element="KEYBOARD" pad="10"/>
-<wire x1="11.95" y1="16.47" x2="78.74" y2="1.27" width="0" layer="19" extent="1-1"/>
+<wire x1="12.0396" y1="15.5448" x2="12.0396" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="21.0312" y1="6.5532" x2="12.0396" y2="15.5448" width="0.1524" layer="1"/>
+<wire x1="73.4568" y1="6.5532" x2="21.0312" y2="6.5532" width="0.1524" layer="1"/>
+<wire x1="78.74" y1="1.27" x2="73.4568" y2="6.5532" width="0.1524" layer="1"/>
+<wire x1="12.0396" y1="16.4592" x2="11.95" y2="16.47" width="0.1524" layer="1"/>
 </signal>
 <signal name="28">
 <contactref element="FEATHER" pad="9"/>
 <contactref element="KEYBOARD" pad="9"/>
-<wire x1="11.45" y1="16.47" x2="76.2" y2="1.27" width="0" layer="19" extent="1-1"/>
+<wire x1="11.43" y1="16.9164" x2="11.43" y2="16.6116" width="0.1524" layer="1"/>
+<wire x1="13.2588" y1="18.7452" x2="11.43" y2="16.9164" width="0.1524" layer="1"/>
+<wire x1="22.5552" y1="18.7452" x2="13.2588" y2="18.7452" width="0.1524" layer="16"/>
+<wire x1="35.9664" y1="5.334" x2="22.5552" y2="18.7452" width="0.1524" layer="16"/>
+<wire x1="72.2376" y1="5.334" x2="35.9664" y2="5.334" width="0.1524" layer="16"/>
+<wire x1="76.2" y1="1.3716" x2="72.2376" y2="5.334" width="0.1524" layer="16"/>
+<wire x1="11.43" y1="16.6116" x2="11.45" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="76.2" y1="1.3716" x2="76.2" y2="1.27" width="0.1524" layer="16"/>
+<via x="13.2588" y="18.7452" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="29">
 <contactref element="FEATHER" pad="10"/>
 <contactref element="KEYBOARD" pad="8"/>
-<wire x1="10.95" y1="16.47" x2="73.66" y2="1.27" width="0" layer="19" extent="1-1"/>
+<wire x1="10.9728" y1="16.002" x2="10.9728" y2="16.4592" width="0.1524" layer="1"/>
+<wire x1="20.7264" y1="6.2484" x2="10.9728" y2="16.002" width="0.1524" layer="1"/>
+<wire x1="68.7324" y1="6.2484" x2="20.7264" y2="6.2484" width="0.1524" layer="1"/>
+<wire x1="73.6092" y1="1.3716" x2="68.7324" y2="6.2484" width="0.1524" layer="1"/>
+<wire x1="10.9728" y1="16.4592" x2="10.95" y2="16.47" width="0.1524" layer="1"/>
+<wire x1="73.6092" y1="1.3716" x2="73.66" y2="1.27" width="0.1524" layer="1"/>
 </signal>
 <signal name="12">
 <contactref element="FEATHER" pad="11"/>
 <contactref element="KEYBOARD" pad="7"/>
-<wire x1="10.45" y1="16.47" x2="71.12" y2="1.27" width="0" layer="19" extent="1-1"/>
+<wire x1="10.5156" y1="16.9164" x2="10.5156" y2="16.6116" width="0.1524" layer="1"/>
+<wire x1="11.1252" y1="17.526" x2="10.5156" y2="16.9164" width="0.1524" layer="1"/>
+<wire x1="21.9456" y1="17.526" x2="11.1252" y2="17.526" width="0.1524" layer="16"/>
+<wire x1="34.4424" y1="5.0292" x2="21.9456" y2="17.526" width="0.1524" layer="16"/>
+<wire x1="67.3608" y1="5.0292" x2="34.4424" y2="5.0292" width="0.1524" layer="16"/>
+<wire x1="71.12" y1="1.27" x2="67.3608" y2="5.0292" width="0.1524" layer="16"/>
+<wire x1="10.5156" y1="16.6116" x2="10.45" y2="16.47" width="0.1524" layer="1"/>
+<via x="11.1252" y="17.526" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="VBAT">
 <contactref element="FEATHER" pad="28"/>
