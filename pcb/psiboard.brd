@@ -158,7 +158,7 @@
 <wire x1="87.63" y1="22.225" x2="86.995" y2="22.86" width="0.1524" layer="20" curve="90"/>
 <wire x1="86.995" y1="22.86" x2="2.168021875" y2="22.86" width="0.1524" layer="20"/>
 <wire x1="2.168021875" y1="22.86" x2="0" y2="20.691978125" width="0.1524" layer="20" curve="90"/>
-<text x="5.08" y="1.27" size="1.778" layer="21">PSIBOARD V1.1</text>
+<text x="5.08" y="1.27" size="1.778" layer="21">PSIBOARD v1.1</text>
 <text x="64.77" y="10.16" size="1.4224" layer="21">ADAFRUIT FEATHER nRF52</text>
 <circle x="2.54" y="20.32" radius="1.27" width="0.1524" layer="20"/>
 <circle x="2.54" y="2.54" radius="1.27" width="0.1524" layer="20"/>
