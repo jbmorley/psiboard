@@ -143,13 +143,15 @@
 <board>
 <plain>
 <wire x1="0" y1="0" x2="205.74" y2="0" width="0.1524" layer="20"/>
-<wire x1="205.74" y1="0" x2="205.74" y2="111.76" width="0.1524" layer="20"/>
-<wire x1="205.74" y1="111.76" x2="91.44" y2="111.76" width="0.1524" layer="20"/>
-<wire x1="91.44" y1="111.76" x2="91.44" y2="93.98" width="0.1524" layer="20"/>
-<wire x1="91.44" y1="93.98" x2="78.74" y2="93.98" width="0.1524" layer="20"/>
-<wire x1="78.74" y1="93.98" x2="78.74" y2="111.76" width="0.1524" layer="20"/>
-<wire x1="78.74" y1="111.76" x2="0" y2="111.76" width="0.1524" layer="20"/>
-<wire x1="0" y1="111.76" x2="0" y2="0" width="0.1524" layer="20"/>
+<wire x1="205.74" y1="0" x2="205.74" y2="22.86" width="0.1524" layer="20"/>
+<wire x1="205.74" y1="22.86" x2="96.52" y2="22.86" width="0.1524" layer="20"/>
+<wire x1="96.52" y1="22.86" x2="96.52" y2="19.05" width="0.1524" layer="20"/>
+<wire x1="96.52" y1="19.05" x2="86.36" y2="19.05" width="0.1524" layer="20"/>
+<wire x1="86.36" y1="19.05" x2="86.36" y2="22.86" width="0.1524" layer="20"/>
+<wire x1="86.36" y1="22.86" x2="0" y2="22.86" width="0.1524" layer="20"/>
+<wire x1="0" y1="22.86" x2="0" y2="0" width="0.1524" layer="20"/>
+<text x="6.35" y="3.81" size="1.778" layer="20">PSIBOARD V1.1</text>
+<text x="58.42" y="10.16" size="1.778" layer="20">ADAFRUIT FEATHER nRF52</text>
 </plain>
 <libraries>
 <library name="adafruit" urn="urn:adsk.eagle:library:420">
@@ -570,15 +572,15 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="FEATHER" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="FEATHERWING_DIM" value="FEATHERWING_NODIM" x="99.06" y="0" rot="MR0"/>
-<element name="KEYBOARD" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="52745-2290" value="52745-2290" x="11.43" y="27.94">
-<attribute name="MF" value="MOLEX" x="11.43" y="27.94" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="" x="11.43" y="27.94" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="11.43" y="27.94" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="11.43" y="27.94" size="1.778" layer="27" display="off"/>
+<element name="FEATHER" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="FEATHERWING_DIM" value="FEATHERWING_NODIM" x="101.6" y="0" rot="MR0"/>
+<element name="KEYBOARD" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="52745-2290" value="52745-2290" x="11.43" y="16.51">
+<attribute name="MF" value="MOLEX" x="11.43" y="16.51" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="11.43" y="16.51" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="11.43" y="16.51" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="11.43" y="16.51" size="1.778" layer="27" display="off"/>
 </element>
-<element name="SWITCH" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="EG1213" value="EG1213" x="24.13" y="29.21" rot="R180"/>
-<element name="U$1" library="micro usb B - 4LEGS" package="MICRO_USB_4_LEGS" value="MICRO-USB-B" x="40.64" y="30.48" rot="R270"/>
+<element name="SWITCH" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="EG1213" value="EG1213" x="29.21" y="19.05" rot="R180"/>
+<element name="U$1" library="micro usb B - 4LEGS" package="MICRO_USB_4_LEGS" value="MICRO-USB-B" x="41.91" y="20.32" rot="R270"/>
 </elements>
 <signals>
 <signal name="25">
@@ -608,12 +610,12 @@ design rules under a new name.</description>
 <signal name="USB">
 <contactref element="FEATHER" pad="26"/>
 <contactref element="U$1" pad="VCC"/>
-<wire x1="77.47" y1="21.59" x2="41.94" y2="27.355" width="0" layer="19" extent="1-1"/>
+<wire x1="80.01" y1="21.59" x2="43.21" y2="17.195" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="EN">
 <contactref element="FEATHER" pad="27"/>
 <contactref element="SWITCH" pad="2"/>
-<wire x1="24.13" y1="29.21" x2="80.01" y2="21.59" width="0" layer="19" extent="1-1"/>
+<wire x1="29.21" y1="19.05" x2="82.55" y2="21.59" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="6">
 <contactref element="FEATHER" pad="15"/>
@@ -633,10 +635,10 @@ design rules under a new name.</description>
 <contactref element="KEYBOARD" pad="1"/>
 <contactref element="KEYBOARD" pad="22"/>
 <contactref element="U$1" pad="GND" route="any" routetag="G$1.GND"/>
-<wire x1="85.09" y1="1.27" x2="39.34" y2="27.355" width="0" layer="19" extent="1-1"/>
-<wire x1="6.18" y1="30.44" x2="85.09" y2="1.27" width="0" layer="19" extent="1-1"/>
-<wire x1="16.68" y1="30.44" x2="6.18" y2="30.44" width="0" layer="19" extent="1-1"/>
-<wire x1="22.23" y1="29.21" x2="16.68" y2="30.44" width="0" layer="19" extent="1-1"/>
+<wire x1="87.63" y1="1.27" x2="40.61" y2="17.195" width="0" layer="19" extent="1-1"/>
+<wire x1="6.18" y1="19.01" x2="87.63" y2="1.27" width="0" layer="19" extent="1-1"/>
+<wire x1="16.68" y1="19.01" x2="6.18" y2="19.01" width="0" layer="19" extent="1-1"/>
+<wire x1="27.31" y1="19.05" x2="16.68" y2="19.01" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="2">
 <contactref element="FEATHER" pad="5"/>
@@ -719,7 +721,7 @@ design rules under a new name.</description>
 <signal name="N$1">
 <contactref element="KEYBOARD" pad="2"/>
 <contactref element="KEYBOARD" pad="5"/>
-<wire x1="8.18" y1="30.44" x2="6.68" y2="30.44" width="0" layer="19" extent="1-1"/>
+<wire x1="8.18" y1="19.01" x2="6.68" y2="19.01" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
