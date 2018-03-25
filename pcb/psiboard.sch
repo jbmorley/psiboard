@@ -808,12 +808,22 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <wire x1="25.4" y1="58.42" x2="20.32" y2="58.42" width="0.1524" layer="91"/>
 <label x="20.32" y="58.42" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="KEYBOARD" gate="-21" pin="S"/>
+<wire x1="104.14" y1="25.4" x2="99.06" y2="25.4" width="0.1524" layer="91"/>
+<label x="99.06" y="25.4" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="26" class="0">
 <segment>
 <pinref part="FEATHER" gate="G$1" pin="GPIOSCL"/>
 <wire x1="25.4" y1="55.88" x2="20.32" y2="55.88" width="0.1524" layer="91"/>
 <label x="20.32" y="55.88" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="KEYBOARD" gate="-20" pin="S"/>
+<wire x1="104.14" y1="27.94" x2="99.06" y2="27.94" width="0.1524" layer="91"/>
+<label x="99.06" y="27.94" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="27" class="0">
@@ -822,12 +832,22 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <wire x1="25.4" y1="53.34" x2="20.32" y2="53.34" width="0.1524" layer="91"/>
 <label x="20.32" y="53.34" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="KEYBOARD" gate="-19" pin="S"/>
+<wire x1="104.14" y1="30.48" x2="99.06" y2="30.48" width="0.1524" layer="91"/>
+<label x="99.06" y="30.48" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="30" class="0">
 <segment>
 <pinref part="FEATHER" gate="G$1" pin="GPIO6"/>
 <wire x1="25.4" y1="50.8" x2="20.32" y2="50.8" width="0.1524" layer="91"/>
 <label x="20.32" y="50.8" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="KEYBOARD" gate="-18" pin="S"/>
+<wire x1="104.14" y1="33.02" x2="99.06" y2="33.02" width="0.1524" layer="91"/>
+<label x="99.06" y="33.02" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="11" class="0">
@@ -836,12 +856,22 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <wire x1="25.4" y1="45.72" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
 <label x="20.32" y="45.72" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="KEYBOARD" gate="-17" pin="S"/>
+<wire x1="104.14" y1="35.56" x2="99.06" y2="35.56" width="0.1524" layer="91"/>
+<label x="99.06" y="35.56" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="7" class="0">
 <segment>
 <pinref part="FEATHER" gate="G$1" pin="GPIO11"/>
 <wire x1="25.4" y1="43.18" x2="20.32" y2="43.18" width="0.1524" layer="91"/>
 <label x="20.32" y="43.18" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="KEYBOARD" gate="-16" pin="S"/>
+<wire x1="104.14" y1="38.1" x2="99.06" y2="38.1" width="0.1524" layer="91"/>
+<label x="99.06" y="38.1" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="15" class="0">
@@ -850,12 +880,22 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <wire x1="25.4" y1="40.64" x2="20.32" y2="40.64" width="0.1524" layer="91"/>
 <label x="20.32" y="40.64" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="KEYBOARD" gate="-15" pin="S"/>
+<wire x1="104.14" y1="40.64" x2="99.06" y2="40.64" width="0.1524" layer="91"/>
+<label x="99.06" y="40.64" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="16" class="0">
 <segment>
 <pinref part="FEATHER" gate="G$1" pin="GPIO13"/>
 <wire x1="25.4" y1="38.1" x2="20.32" y2="38.1" width="0.1524" layer="91"/>
 <label x="20.32" y="38.1" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="KEYBOARD" gate="-14" pin="S"/>
+<wire x1="104.14" y1="43.18" x2="99.06" y2="43.18" width="0.1524" layer="91"/>
+<label x="99.06" y="43.18" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="USB" class="0">
@@ -888,12 +928,27 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <wire x1="68.58" y1="55.88" x2="73.66" y2="55.88" width="0.1524" layer="91"/>
 <label x="73.66" y="55.88" size="0.762" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="KEYBOARD" gate="-2" pin="S"/>
+<wire x1="104.14" y1="73.66" x2="91.44" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="KEYBOARD" gate="-5" pin="S"/>
+<wire x1="91.44" y1="73.66" x2="88.9" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="66.04" x2="91.44" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="66.04" x2="91.44" y2="73.66" width="0.1524" layer="91"/>
+<junction x="91.44" y="73.66"/>
+<label x="88.9" y="73.66" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="8" class="0">
 <segment>
 <pinref part="FEATHER" gate="G$1" pin="GPIORX"/>
 <wire x1="68.58" y1="53.34" x2="73.66" y2="53.34" width="0.1524" layer="91"/>
 <label x="73.66" y="53.34" size="0.762" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="KEYBOARD" gate="-3" pin="S"/>
+<wire x1="104.14" y1="71.12" x2="99.06" y2="71.12" width="0.1524" layer="91"/>
+<label x="99.06" y="71.12" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="14" class="0">
@@ -902,12 +957,22 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <wire x1="68.58" y1="50.8" x2="73.66" y2="50.8" width="0.1524" layer="91"/>
 <label x="73.66" y="50.8" size="0.762" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="KEYBOARD" gate="-4" pin="S"/>
+<wire x1="104.14" y1="68.58" x2="99.06" y2="68.58" width="0.1524" layer="91"/>
+<label x="99.06" y="68.58" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="13" class="0">
 <segment>
 <pinref part="FEATHER" gate="G$1" pin="GPIOMOSI"/>
 <wire x1="68.58" y1="48.26" x2="73.66" y2="48.26" width="0.1524" layer="91"/>
 <label x="73.66" y="48.26" size="0.762" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="KEYBOARD" gate="-6" pin="S"/>
+<wire x1="104.14" y1="63.5" x2="99.06" y2="63.5" width="0.1524" layer="91"/>
+<label x="99.06" y="63.5" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -946,12 +1011,22 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <wire x1="68.58" y1="30.48" x2="73.66" y2="30.48" width="0.1524" layer="91"/>
 <label x="73.66" y="30.48" size="0.762" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="KEYBOARD" gate="-13" pin="S"/>
+<wire x1="104.14" y1="45.72" x2="99.06" y2="45.72" width="0.1524" layer="91"/>
+<label x="99.06" y="45.72" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="3" class="0">
 <segment>
 <pinref part="FEATHER" gate="G$1" pin="GPIOA1"/>
 <wire x1="68.58" y1="33.02" x2="73.66" y2="33.02" width="0.1524" layer="91"/>
 <label x="73.66" y="33.02" size="0.762" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="KEYBOARD" gate="-12" pin="S"/>
+<wire x1="104.14" y1="48.26" x2="99.06" y2="48.26" width="0.1524" layer="91"/>
+<label x="99.06" y="48.26" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="4" class="0">
@@ -960,12 +1035,22 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <wire x1="68.58" y1="35.56" x2="73.66" y2="35.56" width="0.1524" layer="91"/>
 <label x="73.66" y="35.56" size="0.762" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="KEYBOARD" gate="-11" pin="S"/>
+<wire x1="104.14" y1="50.8" x2="99.06" y2="50.8" width="0.1524" layer="91"/>
+<label x="99.06" y="50.8" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="5" class="0">
 <segment>
 <pinref part="FEATHER" gate="G$1" pin="GPIOA3"/>
 <wire x1="68.58" y1="38.1" x2="73.66" y2="38.1" width="0.1524" layer="91"/>
 <label x="73.66" y="38.1" size="0.762" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="KEYBOARD" gate="-10" pin="S"/>
+<wire x1="104.14" y1="53.34" x2="99.06" y2="53.34" width="0.1524" layer="91"/>
+<label x="99.06" y="53.34" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="28" class="0">
@@ -974,12 +1059,22 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <wire x1="68.58" y1="40.64" x2="73.66" y2="40.64" width="0.1524" layer="91"/>
 <label x="73.66" y="40.64" size="0.762" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="KEYBOARD" gate="-9" pin="S"/>
+<wire x1="104.14" y1="55.88" x2="99.06" y2="55.88" width="0.1524" layer="91"/>
+<label x="99.06" y="55.88" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="29" class="0">
 <segment>
 <pinref part="FEATHER" gate="G$1" pin="GPIOA5"/>
 <wire x1="68.58" y1="43.18" x2="73.66" y2="43.18" width="0.1524" layer="91"/>
 <label x="73.66" y="43.18" size="0.762" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="KEYBOARD" gate="-8" pin="S"/>
+<wire x1="104.14" y1="58.42" x2="99.06" y2="58.42" width="0.1524" layer="91"/>
+<label x="99.06" y="58.42" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="12" class="0">
@@ -988,131 +1083,10 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <wire x1="68.58" y1="45.72" x2="73.66" y2="45.72" width="0.1524" layer="91"/>
 <label x="73.66" y="45.72" size="0.762" layer="95" xref="yes"/>
 </segment>
-</net>
-<net name="N$26" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-3" pin="S"/>
-<wire x1="104.14" y1="71.12" x2="99.06" y2="71.12" width="0.1524" layer="91"/>
-<label x="99.06" y="71.12" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$27" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-4" pin="S"/>
-<wire x1="104.14" y1="68.58" x2="99.06" y2="68.58" width="0.1524" layer="91"/>
-<label x="99.06" y="68.58" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$29" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-6" pin="S"/>
-<wire x1="104.14" y1="63.5" x2="99.06" y2="63.5" width="0.1524" layer="91"/>
-<label x="99.06" y="63.5" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$30" class="0">
 <segment>
 <pinref part="KEYBOARD" gate="-7" pin="S"/>
 <wire x1="104.14" y1="60.96" x2="99.06" y2="60.96" width="0.1524" layer="91"/>
 <label x="99.06" y="60.96" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$31" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-8" pin="S"/>
-<wire x1="104.14" y1="58.42" x2="99.06" y2="58.42" width="0.1524" layer="91"/>
-<label x="99.06" y="58.42" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$32" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-9" pin="S"/>
-<wire x1="104.14" y1="55.88" x2="99.06" y2="55.88" width="0.1524" layer="91"/>
-<label x="99.06" y="55.88" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$33" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-10" pin="S"/>
-<wire x1="104.14" y1="53.34" x2="99.06" y2="53.34" width="0.1524" layer="91"/>
-<label x="99.06" y="53.34" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$34" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-11" pin="S"/>
-<wire x1="104.14" y1="50.8" x2="99.06" y2="50.8" width="0.1524" layer="91"/>
-<label x="99.06" y="50.8" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$35" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-12" pin="S"/>
-<wire x1="104.14" y1="48.26" x2="99.06" y2="48.26" width="0.1524" layer="91"/>
-<label x="99.06" y="48.26" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$36" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-13" pin="S"/>
-<wire x1="104.14" y1="45.72" x2="99.06" y2="45.72" width="0.1524" layer="91"/>
-<label x="99.06" y="45.72" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$37" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-14" pin="S"/>
-<wire x1="104.14" y1="43.18" x2="99.06" y2="43.18" width="0.1524" layer="91"/>
-<label x="99.06" y="43.18" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$38" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-15" pin="S"/>
-<wire x1="104.14" y1="40.64" x2="99.06" y2="40.64" width="0.1524" layer="91"/>
-<label x="99.06" y="40.64" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$39" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-16" pin="S"/>
-<wire x1="104.14" y1="38.1" x2="99.06" y2="38.1" width="0.1524" layer="91"/>
-<label x="99.06" y="38.1" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$40" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-17" pin="S"/>
-<wire x1="104.14" y1="35.56" x2="99.06" y2="35.56" width="0.1524" layer="91"/>
-<label x="99.06" y="35.56" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$41" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-18" pin="S"/>
-<wire x1="104.14" y1="33.02" x2="99.06" y2="33.02" width="0.1524" layer="91"/>
-<label x="99.06" y="33.02" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$42" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-19" pin="S"/>
-<wire x1="104.14" y1="30.48" x2="99.06" y2="30.48" width="0.1524" layer="91"/>
-<label x="99.06" y="30.48" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$43" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-20" pin="S"/>
-<wire x1="104.14" y1="27.94" x2="99.06" y2="27.94" width="0.1524" layer="91"/>
-<label x="99.06" y="27.94" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$44" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-21" pin="S"/>
-<wire x1="104.14" y1="25.4" x2="99.06" y2="25.4" width="0.1524" layer="91"/>
-<label x="99.06" y="25.4" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="VBAT" class="0">
@@ -1120,18 +1094,6 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <pinref part="FEATHER" gate="G$1" pin="VBAT"/>
 <wire x1="25.4" y1="30.48" x2="20.32" y2="30.48" width="0.1524" layer="91"/>
 <label x="20.32" y="30.48" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$1" class="0">
-<segment>
-<pinref part="KEYBOARD" gate="-2" pin="S"/>
-<wire x1="104.14" y1="73.66" x2="91.44" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="KEYBOARD" gate="-5" pin="S"/>
-<wire x1="91.44" y1="73.66" x2="88.9" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="66.04" x2="91.44" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="66.04" x2="91.44" y2="73.66" width="0.1524" layer="91"/>
-<junction x="91.44" y="73.66"/>
-<label x="88.9" y="73.66" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
