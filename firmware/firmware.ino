@@ -16,10 +16,53 @@
 BLEDis bledis;
 BLEHidAdafruit blehid;
 
+#define KEYBOARD_01 6
+#define KEYBOARD_02 8
+#define KEYBOARD_03 14
+#define KEYBOARD_04 6
+#define KEYBOARD_05 13
+#define KEYBOARD_06 12
+#define KEYBOARD_07 29
+#define KEYBOARD_08 28
+#define KEYBOARD_09 5
+#define KEYBOARD_10 4
+#define KEYBOARD_11 3
+#define KEYBOARD_12 2
+#define KEYBOARD_13 16
+#define KEYBOARD_14 15
+#define KEYBOARD_15 7
+#define KEYBOARD_16 11
+#define KEYBOARD_17 30
+#define KEYBOARD_18 27
+#define KEYBOARD_19 26
+#define KEYBOARD_20 25
+
 # define MAX_COLUMNS 11
-int COLUMNS[] = {PIN_A5, PIN_A1, PIN_A0, 16, 15, 7, 11, 30, 25, 27, 26};
+int COLUMNS[] = {
+  KEYBOARD_15,
+  KEYBOARD_11,
+  KEYBOARD_10,
+  KEYBOARD_09,
+  KEYBOARD_08,
+  KEYBOARD_07,
+  KEYBOARD_06,
+  KEYBOARD_05,
+  KEYBOARD_04,
+  KEYBOARD_03,
+  KEYBOARD_02,
+  };
+
 #define MAX_ROWS 8
-int ROWS[] = {6, 8, 14, 13, 12, PIN_A4, PIN_A3, PIN_A2};
+int ROWS[] = {
+  KEYBOARD_20,
+  KEYBOARD_19,
+  KEYBOARD_18,
+  KEYBOARD_17,
+  KEYBOARD_16,
+  KEYBOARD_14,
+  KEYBOARD_13,
+  KEYBOARD_12,
+  };
 
 #define KEY_NONE HID_KEY_A
 
