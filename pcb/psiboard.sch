@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.7.1">
+<eagle version="9.1.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -9,6 +9,8 @@
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
+<layer number="15" name="Route15" color="23" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
@@ -674,68 +676,207 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="micro usb B - 4LEGS">
+<library name="microB">
+<description>Generated from &lt;b&gt;microB.brd&lt;/b&gt;&lt;p&gt;
+by exp-lbrs.ulp</description>
 <packages>
-<package name="MICRO_USB_4_LEGS">
-<wire x1="-2.15" y1="4.4" x2="-2.15" y2="-4.4" width="0.127" layer="49"/>
-<wire x1="4.2" y1="4.4" x2="4.2" y2="-4.4" width="0.127" layer="49"/>
-<wire x1="4.2" y1="4.4" x2="-2.15" y2="4.4" width="0.127" layer="49"/>
-<wire x1="4.2" y1="-4.4" x2="-2.15" y2="-4.4" width="0.127" layer="49"/>
-<rectangle x1="-0.75" y1="2.784" x2="0.75" y2="4.584" layer="31"/>
-<rectangle x1="-0.75" y1="-1.25" x2="0.75" y2="1.25" layer="31"/>
-<rectangle x1="-0.75" y1="-4.584" x2="0.75" y2="-2.784" layer="31"/>
-<rectangle x1="-0.85" y1="2.684" x2="0.85" y2="4.684" layer="29"/>
-<rectangle x1="-0.85" y1="-4.684" x2="0.85" y2="-2.684" layer="29"/>
-<rectangle x1="-0.85" y1="-1.35" x2="0.85" y2="1.35" layer="29"/>
-<smd name="D+" x="3.125" y="0" dx="0.4" dy="1.85" layer="1" rot="R90"/>
-<smd name="D-" x="3.125" y="0.65" dx="0.4" dy="1.85" layer="1" rot="R90"/>
-<smd name="GND" x="3.125" y="-1.3" dx="0.4" dy="1.85" layer="1" rot="R90"/>
-<smd name="ID" x="3.125" y="-0.65" dx="0.4" dy="1.85" layer="1" rot="R90"/>
-<smd name="VCC" x="3.125" y="1.3" dx="0.4" dy="1.85" layer="1" rot="R90"/>
-<text x="-2.3" y="-0.85" size="0.3048" layer="51" rot="R90">PCB Front</text>
-<text x="-1.27" y="5.969" size="0.4064" layer="25">&gt;NAME</text>
-<text x="-1.27" y="5.461" size="0.4064" layer="27">&gt;VALUE</text>
-<hole x="2.1" y="2" drill="0.8"/>
-<hole x="2.1" y="-2" drill="0.8"/>
-<pad name="P$1" x="-0.1" y="3.575" drill="1.1" diameter="1.5" shape="long"/>
-<pad name="P$2" x="-0.1" y="-3.575" drill="1.1" diameter="1.5" shape="long"/>
-<pad name="P$3" x="3.4" y="3.575" drill="1" diameter="1.5" shape="offset" rot="R180"/>
-<pad name="P$5" x="3.4" y="-3.575" drill="1" diameter="1.5" shape="offset" rot="R180"/>
-<smd name="P$4" x="-0.1" y="0" dx="6" dy="2" layer="1" rot="R90"/>
+<package name="MICROBUILDER_4UCONN_20329">
+<wire x1="3.5" y1="-4.35" x2="4.35" y2="-4.35" width="0" layer="51"/>
+<wire x1="-3.9" y1="-1.6" x2="-3.6" y2="-1.35" width="0" layer="20" curve="-90"/>
+<wire x1="-3.6" y1="-1.35" x2="-3.3" y2="-1.6" width="0" layer="20" curve="-90"/>
+<wire x1="-3.3" y1="-1.6" x2="-3.3" y2="-2.2" width="0" layer="20"/>
+<wire x1="-3.3" y1="-2.2" x2="-3.6" y2="-2.45" width="0" layer="20" curve="-90"/>
+<wire x1="-3.6" y1="-2.45" x2="-3.9" y2="-2.2" width="0" layer="20" curve="-90"/>
+<wire x1="-3.9" y1="-2.2" x2="-3.9" y2="-1.6" width="0" layer="20"/>
+<wire x1="3.9" y1="-2.2" x2="3.6" y2="-2.45" width="0" layer="20" curve="-90"/>
+<wire x1="3.6" y1="-2.45" x2="3.3" y2="-2.2" width="0" layer="20" curve="-90"/>
+<wire x1="3.9" y1="-1.6" x2="3.9" y2="-2.2" width="0" layer="20"/>
+<wire x1="3.6" y1="-1.35" x2="3.9" y2="-1.6" width="0" layer="20" curve="-90"/>
+<wire x1="3.3" y1="-1.6" x2="3.6" y2="-1.35" width="0" layer="20" curve="-90"/>
+<wire x1="3.3" y1="-2.2" x2="3.3" y2="-1.6" width="0" layer="20"/>
+<wire x1="-2.7" y1="-3.325" x2="-2.775" y2="-3.325" width="0.127" layer="51"/>
+<wire x1="-2.775" y1="-3.325" x2="-2.85" y2="-3.225" width="0.127" layer="51" curve="-90"/>
+<wire x1="-2.85" y1="-3.225" x2="-2.85" y2="-3.2" width="0.127" layer="51"/>
+<wire x1="-2.85" y1="-3.2" x2="-2.75" y2="-3.1" width="0.127" layer="51" curve="-90"/>
+<wire x1="-2.75" y1="-3.1" x2="-2.75" y2="-2.625" width="0.127" layer="51"/>
+<wire x1="-2.75" y1="-2.625" x2="-2.75" y2="-2.05" width="0.127" layer="51"/>
+<wire x1="-2.75" y1="-2.05" x2="-2.475" y2="-1.775" width="0.127" layer="51" curve="-90"/>
+<wire x1="-2.475" y1="-1.775" x2="-2.225" y2="-1.775" width="0.127" layer="51"/>
+<wire x1="-2.225" y1="-1.775" x2="-1.975" y2="-2.025" width="0.127" layer="51" curve="-90"/>
+<wire x1="-1.975" y1="-2.025" x2="-1.975" y2="-3.1" width="0.127" layer="51"/>
+<wire x1="-1.975" y1="-3.1" x2="-1.95" y2="-3.1" width="0.127" layer="51"/>
+<wire x1="-1.95" y1="-3.1" x2="-1.875" y2="-3.175" width="0.127" layer="51" curve="-90"/>
+<wire x1="-1.875" y1="-3.175" x2="-2.025" y2="-3.325" width="0.127" layer="51" curve="-90"/>
+<wire x1="-2.025" y1="-3.325" x2="-2.025" y2="-3.8" width="0.127" layer="51"/>
+<wire x1="-2.025" y1="-3.8" x2="-2.7" y2="-3.8" width="0.127" layer="51"/>
+<wire x1="-2.7" y1="-3.8" x2="-2.7" y2="-3.325" width="0.127" layer="51"/>
+<wire x1="-2.75" y1="-2.625" x2="-2" y2="-2.625" width="0.127" layer="51"/>
+<wire x1="-2.7" y1="-3.325" x2="-2" y2="-3.325" width="0.127" layer="51"/>
+<wire x1="-3.675" y1="-4.3" x2="-3.45" y2="-4.3" width="0.127" layer="51"/>
+<wire x1="-3.45" y1="-4.3" x2="-3.075" y2="-4.3" width="0.127" layer="51"/>
+<wire x1="-3.075" y1="-4.3" x2="3.1" y2="-4.3" width="0.127" layer="51"/>
+<wire x1="3.1" y1="-4.3" x2="3.7" y2="-4.3" width="0.127" layer="51"/>
+<wire x1="3.7" y1="-4.3" x2="3.75" y2="-4.3" width="0.127" layer="51"/>
+<wire x1="3.75" y1="-4.3" x2="3.75" y2="0.2" width="0.127" layer="51"/>
+<wire x1="3.75" y1="0.2" x2="3.35" y2="0.6" width="0.127" layer="51" curve="90"/>
+<wire x1="3.35" y1="0.6" x2="2.925" y2="0.6" width="0.127" layer="51"/>
+<wire x1="2.475" y1="0.6" x2="1.675" y2="0.6" width="0.127" layer="51"/>
+<wire x1="1.675" y1="0.6" x2="0.525" y2="0.6" width="0.127" layer="51"/>
+<wire x1="0.525" y1="0.6" x2="0.525" y2="0.35" width="0.127" layer="51"/>
+<wire x1="0.525" y1="0.35" x2="0.325" y2="0.15" width="0.127" layer="51" curve="-90"/>
+<wire x1="0.325" y1="0.15" x2="-0.3" y2="0.15" width="0.127" layer="51"/>
+<wire x1="-0.3" y1="0.15" x2="-0.475" y2="0.325" width="0.127" layer="51" curve="-90"/>
+<wire x1="-0.475" y1="0.325" x2="-0.475" y2="0.6" width="0.127" layer="51"/>
+<wire x1="-0.475" y1="0.6" x2="-1.65" y2="0.6" width="0.127" layer="51"/>
+<wire x1="-1.65" y1="0.6" x2="-2.5" y2="0.6" width="0.127" layer="51"/>
+<wire x1="-2.825" y1="0.6" x2="-3.275" y2="0.6" width="0.127" layer="51"/>
+<wire x1="-3.275" y1="0.6" x2="-3.75" y2="0.125" width="0.127" layer="51" curve="90"/>
+<wire x1="-3.75" y1="0.125" x2="-3.75" y2="-4.3" width="0.127" layer="51"/>
+<wire x1="-3.75" y1="-4.3" x2="-3.675" y2="-4.3" width="0.127" layer="51"/>
+<wire x1="-3.725" y1="0.025" x2="-3.175" y2="0.025" width="0.127" layer="51"/>
+<wire x1="-3.175" y1="0.025" x2="-2.975" y2="0.225" width="0.127" layer="51" curve="90"/>
+<wire x1="-2.975" y1="0.225" x2="-2.975" y2="0.45" width="0.127" layer="51"/>
+<wire x1="-2.975" y1="0.45" x2="-2.825" y2="0.6" width="0.127" layer="51" curve="-90"/>
+<wire x1="-2.825" y1="0.6" x2="-2.5" y2="0.6" width="0.127" layer="51"/>
+<wire x1="-2.5" y1="0.6" x2="-2.425" y2="0.525" width="0.127" layer="51" curve="-90"/>
+<wire x1="-2.425" y1="0.525" x2="-2.425" y2="0.325" width="0.127" layer="51"/>
+<wire x1="-2.425" y1="0.325" x2="-2" y2="-0.1" width="0.127" layer="51" curve="90"/>
+<wire x1="-2" y1="-0.1" x2="-1.65" y2="0.25" width="0.127" layer="51" curve="90"/>
+<wire x1="-1.65" y1="0.25" x2="-1.65" y2="0.6" width="0.127" layer="51"/>
+<wire x1="1.675" y1="0.6" x2="1.675" y2="0.3" width="0.127" layer="51"/>
+<wire x1="1.675" y1="0.3" x2="2.075" y2="-0.1" width="0.127" layer="51" curve="90"/>
+<wire x1="2.075" y1="-0.1" x2="2.475" y2="0.3" width="0.127" layer="51" curve="90"/>
+<wire x1="2.475" y1="0.3" x2="2.475" y2="0.6" width="0.127" layer="51"/>
+<wire x1="2.475" y1="0.6" x2="2.925" y2="0.6" width="0.127" layer="51"/>
+<wire x1="2.925" y1="0.6" x2="3" y2="0.525" width="0.127" layer="51" curve="-90"/>
+<wire x1="3" y1="0.525" x2="3" y2="0.2" width="0.127" layer="51"/>
+<wire x1="3" y1="0.2" x2="3.175" y2="0.025" width="0.127" layer="51" curve="90"/>
+<wire x1="3.175" y1="0.025" x2="3.725" y2="0.025" width="0.127" layer="51"/>
+<wire x1="-3.425" y1="0.625" x2="-3.425" y2="0.75" width="0.127" layer="51"/>
+<wire x1="-3.425" y1="0.75" x2="-3.575" y2="0.75" width="0.127" layer="51"/>
+<wire x1="-3.575" y1="0.75" x2="-3.575" y2="1.05" width="0.127" layer="51"/>
+<wire x1="-3.575" y1="1.05" x2="-0.475" y2="1.05" width="0.127" layer="51"/>
+<wire x1="0.525" y1="1.05" x2="3.6" y2="1.05" width="0.127" layer="51"/>
+<wire x1="3.6" y1="1.05" x2="3.6" y2="0.775" width="0.127" layer="51"/>
+<wire x1="3.6" y1="0.775" x2="3.35" y2="0.775" width="0.127" layer="51"/>
+<wire x1="3.35" y1="0.775" x2="3.35" y2="0.6" width="0.127" layer="51"/>
+<wire x1="-0.475" y1="0.6" x2="-0.475" y2="1.05" width="0.127" layer="51"/>
+<wire x1="-0.475" y1="1.05" x2="0.525" y2="1.05" width="0.127" layer="51"/>
+<wire x1="0.525" y1="1.05" x2="0.525" y2="0.6" width="0.127" layer="51"/>
+<wire x1="-0.125" y1="0.175" x2="-0.125" y2="0.65" width="0.127" layer="51"/>
+<wire x1="-0.125" y1="0.65" x2="0.1" y2="0.65" width="0.127" layer="51"/>
+<wire x1="0.1" y1="0.65" x2="0.1" y2="0.175" width="0.127" layer="51"/>
+<wire x1="-3.075" y1="-4.3" x2="-3.075" y2="-4.525" width="0.127" layer="51"/>
+<wire x1="-3.075" y1="-4.525" x2="-2.725" y2="-4.875" width="0.127" layer="51" curve="90"/>
+<wire x1="-2.725" y1="-4.875" x2="2.775" y2="-4.875" width="0.127" layer="51"/>
+<wire x1="2.775" y1="-4.875" x2="3.1" y2="-4.55" width="0.127" layer="51" curve="90"/>
+<wire x1="3.1" y1="-4.55" x2="3.1" y2="-4.3" width="0.127" layer="51"/>
+<wire x1="-3.975" y1="-4.725" x2="-3.675" y2="-4.3" width="0.127" layer="51"/>
+<wire x1="-3.975" y1="-4.725" x2="-3.75" y2="-4.9" width="0.127" layer="51"/>
+<wire x1="-3.75" y1="-4.9" x2="-3.45" y2="-4.475" width="0.127" layer="51"/>
+<wire x1="-3.45" y1="-4.475" x2="-3.45" y2="-4.3" width="0.127" layer="51"/>
+<wire x1="3.7" y1="-4.3" x2="4" y2="-4.725" width="0.127" layer="51"/>
+<wire x1="4" y1="-4.725" x2="3.775" y2="-4.9" width="0.127" layer="51"/>
+<wire x1="3.775" y1="-4.9" x2="3.5" y2="-4.5" width="0.127" layer="51"/>
+<wire x1="3.5" y1="-4.5" x2="3.5" y2="-4.35" width="0.127" layer="51"/>
+<wire x1="2" y1="-3.325" x2="1.925" y2="-3.325" width="0.127" layer="51"/>
+<wire x1="1.925" y1="-3.325" x2="1.85" y2="-3.225" width="0.127" layer="51" curve="-90"/>
+<wire x1="1.85" y1="-3.225" x2="1.85" y2="-3.2" width="0.127" layer="51"/>
+<wire x1="1.85" y1="-3.2" x2="1.95" y2="-3.1" width="0.127" layer="51" curve="-90"/>
+<wire x1="1.95" y1="-3.1" x2="1.95" y2="-2.625" width="0.127" layer="51"/>
+<wire x1="1.95" y1="-2.625" x2="1.95" y2="-2.05" width="0.127" layer="51"/>
+<wire x1="1.95" y1="-2.05" x2="2.225" y2="-1.775" width="0.127" layer="51" curve="-90"/>
+<wire x1="2.225" y1="-1.775" x2="2.475" y2="-1.775" width="0.127" layer="51"/>
+<wire x1="2.475" y1="-1.775" x2="2.725" y2="-2.025" width="0.127" layer="51" curve="-90"/>
+<wire x1="2.725" y1="-2.025" x2="2.725" y2="-3.1" width="0.127" layer="51"/>
+<wire x1="2.725" y1="-3.1" x2="2.75" y2="-3.1" width="0.127" layer="51"/>
+<wire x1="2.75" y1="-3.1" x2="2.825" y2="-3.175" width="0.127" layer="51" curve="-90"/>
+<wire x1="2.825" y1="-3.175" x2="2.675" y2="-3.325" width="0.127" layer="51" curve="-90"/>
+<wire x1="2.675" y1="-3.325" x2="2.675" y2="-3.8" width="0.127" layer="51"/>
+<wire x1="2.675" y1="-3.8" x2="2" y2="-3.8" width="0.127" layer="51"/>
+<wire x1="2" y1="-3.8" x2="2" y2="-3.325" width="0.127" layer="51"/>
+<wire x1="1.95" y1="-2.625" x2="2.7" y2="-2.625" width="0.127" layer="51"/>
+<wire x1="2" y1="-3.325" x2="2.7" y2="-3.325" width="0.127" layer="51"/>
+<wire x1="-2.5" y1="1.1" x2="-1.7" y2="1.1" width="0.127" layer="21"/>
+<wire x1="1.7" y1="1.1" x2="2.5" y2="1.1" width="0.127" layer="21"/>
+<wire x1="-3.8" y1="-3.4" x2="-3.8" y2="-4.3" width="0.127" layer="21"/>
+<wire x1="-3.8" y1="-4.3" x2="3.8" y2="-4.3" width="0.127" layer="21"/>
+<wire x1="3.8" y1="-4.3" x2="3.8" y2="-3.4" width="0.127" layer="21"/>
+<rectangle x1="-1.55" y1="0.05" x2="-1.05" y2="1.5" layer="29"/>
+<rectangle x1="-0.9" y1="0.05" x2="-0.4" y2="1.5" layer="29"/>
+<rectangle x1="-0.25" y1="0.05" x2="0.25" y2="1.5" layer="29"/>
+<rectangle x1="0.4" y1="0.05" x2="0.9" y2="1.5" layer="29"/>
+<rectangle x1="1.05" y1="0.05" x2="1.55" y2="1.5" layer="29"/>
+<rectangle x1="-4.85" y1="-3.15" x2="-2.35" y2="-0.65" layer="31"/>
+<rectangle x1="2.35" y1="-3.15" x2="4.85" y2="-0.65" layer="31"/>
+<smd name="BASE@1" x="-0.75" y="-2" dx="2" dy="1" layer="1" rot="R90"/>
+<smd name="BASE@2" x="0.75" y="-2" dx="2" dy="1" layer="1" rot="R90"/>
+<smd name="D+" x="0" y="0.775" dx="0.4" dy="1.35" layer="1" stop="no"/>
+<smd name="D-" x="-0.65" y="0.775" dx="0.4" dy="1.35" layer="1" stop="no"/>
+<smd name="GND" x="1.3" y="0.775" dx="0.4" dy="1.35" layer="1" stop="no"/>
+<smd name="ID" x="0.65" y="0.775" dx="0.4" dy="1.35" layer="1" stop="no"/>
+<pad name="SPRT@1" x="-3.3" y="0.9" drill="0.7" shape="offset" rot="R180"/>
+<pad name="SPRT@2" x="3.3" y="0.9" drill="0.7" shape="offset"/>
+<pad name="SPRT@3" x="-3.6" y="-1.9" drill="0.6" diameter="2.5" shape="square" rot="R90"/>
+<pad name="SPRT@4" x="3.6" y="-1.9" drill="0.6" diameter="2.5" shape="square" rot="R90"/>
+<smd name="VBUS" x="-1.3" y="0.775" dx="0.4" dy="1.35" layer="1" stop="no"/>
+<text x="0" y="-4" size="0.4064" layer="51" ratio="16" align="center">PCB EDGE</text>
+<text x="-2.778" y="-5.852" size="0.8128" layer="25" ratio="18">&gt;NAME</text>
+<text x="-2.778" y="-6.41" size="0.4064" layer="27" ratio="10">&gt;VALUE</text>
+<hole x="-1.95" y="0" drill="0.7"/>
+<hole x="1.95" y="0" drill="0.7"/>
+<polygon width="0.127" layer="31">
+<vertex x="-5.05" y="0.9" curve="90"/>
+<vertex x="-4.45" y="0.35"/>
+<vertex x="-3.35" y="0.35" curve="90"/>
+<vertex x="-2.75" y="0.9" curve="90"/>
+<vertex x="-3.35" y="1.45"/>
+<vertex x="-4.45" y="1.45" curve="90"/>
+</polygon>
+<polygon width="0.127" layer="31">
+<vertex x="2.75" y="0.9" curve="90"/>
+<vertex x="3.35" y="0.35"/>
+<vertex x="4.45" y="0.35" curve="90"/>
+<vertex x="5.05" y="0.9" curve="90"/>
+<vertex x="4.45" y="1.45"/>
+<vertex x="3.35" y="1.45" curve="90"/>
+</polygon>
 </package>
 </packages>
 <symbols>
-<symbol name="USB">
-<wire x1="-10.16" y1="15.24" x2="10.16" y2="15.24" width="0.6096" layer="94"/>
-<wire x1="10.16" y1="15.24" x2="10.16" y2="-15.24" width="0.6096" layer="94"/>
-<wire x1="10.16" y1="-15.24" x2="-10.16" y2="-15.24" width="0.6096" layer="94"/>
-<wire x1="-10.16" y1="-15.24" x2="-10.16" y2="15.24" width="0.6096" layer="94"/>
-<pin name="VCC" x="15.24" y="10.16" length="middle" rot="R180"/>
-<pin name="D-" x="15.24" y="5.08" length="middle" rot="R180"/>
-<pin name="D+" x="15.24" y="0" length="middle" rot="R180"/>
-<pin name="ID" x="15.24" y="-5.08" length="middle" rot="R180"/>
-<pin name="GND" x="15.24" y="-10.16" length="middle" rot="R180"/>
-<text x="-2.54" y="-6.604" size="5.08" layer="95" rot="R90">USB</text>
-<text x="0" y="10.16" size="1.778" layer="96">VCC</text>
-<text x="0" y="5.08" size="1.778" layer="96">D-</text>
-<text x="0" y="0" size="1.778" layer="96">D+</text>
-<text x="0" y="-5.08" size="1.778" layer="96">ID</text>
-<text x="0" y="-10.16" size="1.778" layer="96">GND</text>
+<symbol name="USB_MICRO_PWR">
+<wire x1="0" y1="0" x2="20.32" y2="0" width="0.254" layer="94"/>
+<wire x1="20.32" y1="0" x2="20.32" y2="15.24" width="0.254" layer="94"/>
+<wire x1="20.32" y1="15.24" x2="0" y2="15.24" width="0.254" layer="94"/>
+<wire x1="0" y1="15.24" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="VBUS" x="25.4" y="12.7" length="middle" rot="R180"/>
+<pin name="D+" x="25.4" y="10.16" length="middle" rot="R180"/>
+<pin name="D-" x="25.4" y="7.62" length="middle" rot="R180"/>
+<pin name="ID" x="25.4" y="5.08" length="middle" rot="R180"/>
+<pin name="GND" x="25.4" y="2.54" length="middle" rot="R180"/>
+<text x="12.7" y="20.32" size="1.4224" layer="1" ratio="10">&gt;NAME</text>
+<text x="10.16" y="20.32" size="1.4224" layer="1" ratio="10">&gt;NAME</text>
+<text x="7.62" y="22.86" size="1.4224" layer="1" ratio="10">&gt;NAME</text>
+<text x="2.54" y="22.86" size="1.4224" layer="1" ratio="10">&gt;NAME</text>
+<text x="7.62" y="20.32" size="1.4224" layer="1" ratio="10">&gt;NAME</text>
+<text x="0" y="17.78" size="2.1844" layer="1" ratio="10">&gt;NAME</text>
+<text x="0" y="17.78" size="2.1844" layer="1" ratio="10">&gt;NAME</text>
+<text x="0" y="17.78" size="2.1844" layer="1" ratio="10">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="MICRO-USB-B">
+<deviceset name="USB_MICRO_PWR">
 <gates>
-<gate name="G$1" symbol="USB" x="0" y="0"/>
+<gate name="G$1" symbol="USB_MICRO_PWR" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="MICRO_USB_4_LEGS">
+<device name="" package="MICROBUILDER_4UCONN_20329">
 <connects>
 <connect gate="G$1" pin="D+" pad="D+"/>
 <connect gate="G$1" pin="D-" pad="D-"/>
-<connect gate="G$1" pin="GND" pad="GND" route="any"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
 <connect gate="G$1" pin="ID" pad="ID"/>
-<connect gate="G$1" pin="VCC" pad="VCC"/>
+<connect gate="G$1" pin="VBUS" pad="VBUS"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -761,8 +902,8 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="U$1" library="micro usb B - 4LEGS" deviceset="MICRO-USB-B" device=""/>
-<part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="U$2" library="microB" deviceset="USB_MICRO_PWR" device=""/>
+<part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -796,8 +937,8 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <instance part="GND1" gate="1" x="30.48" y="76.2"/>
 <instance part="GND2" gate="1" x="78.74" y="17.78"/>
 <instance part="GND3" gate="1" x="83.82" y="17.78"/>
-<instance part="U$1" gate="G$1" x="137.16" y="71.12"/>
-<instance part="GND4" gate="1" x="154.94" y="53.34"/>
+<instance part="U$2" gate="G$1" x="127" y="25.4"/>
+<instance part="GND5" gate="1" x="154.94" y="20.32"/>
 </instances>
 <busses>
 </busses>
@@ -809,9 +950,14 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="20.32" y="58.42" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-21" pin="S"/>
-<wire x1="104.14" y1="25.4" x2="99.06" y2="25.4" width="0.1524" layer="91"/>
-<label x="99.06" y="25.4" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-2" pin="S"/>
+<wire x1="104.14" y1="73.66" x2="91.44" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="KEYBOARD" gate="-5" pin="S"/>
+<wire x1="91.44" y1="73.66" x2="88.9" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="66.04" x2="91.44" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="66.04" x2="91.44" y2="73.66" width="0.1524" layer="91"/>
+<junction x="91.44" y="73.66"/>
+<label x="88.9" y="73.66" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="26" class="0">
@@ -821,9 +967,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="20.32" y="55.88" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-20" pin="S"/>
-<wire x1="104.14" y1="27.94" x2="99.06" y2="27.94" width="0.1524" layer="91"/>
-<label x="99.06" y="27.94" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-3" pin="S"/>
+<wire x1="104.14" y1="71.12" x2="99.06" y2="71.12" width="0.1524" layer="91"/>
+<label x="99.06" y="71.12" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="27" class="0">
@@ -833,9 +979,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="20.32" y="53.34" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-19" pin="S"/>
-<wire x1="104.14" y1="30.48" x2="99.06" y2="30.48" width="0.1524" layer="91"/>
-<label x="99.06" y="30.48" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-4" pin="S"/>
+<wire x1="104.14" y1="68.58" x2="99.06" y2="68.58" width="0.1524" layer="91"/>
+<label x="99.06" y="68.58" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="30" class="0">
@@ -845,9 +991,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="20.32" y="50.8" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-18" pin="S"/>
-<wire x1="104.14" y1="33.02" x2="99.06" y2="33.02" width="0.1524" layer="91"/>
-<label x="99.06" y="33.02" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-6" pin="S"/>
+<wire x1="104.14" y1="63.5" x2="99.06" y2="63.5" width="0.1524" layer="91"/>
+<label x="99.06" y="63.5" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="11" class="0">
@@ -857,9 +1003,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="20.32" y="45.72" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-17" pin="S"/>
-<wire x1="104.14" y1="35.56" x2="99.06" y2="35.56" width="0.1524" layer="91"/>
-<label x="99.06" y="35.56" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-7" pin="S"/>
+<wire x1="104.14" y1="60.96" x2="99.06" y2="60.96" width="0.1524" layer="91"/>
+<label x="99.06" y="60.96" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="7" class="0">
@@ -869,9 +1015,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="20.32" y="43.18" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-16" pin="S"/>
-<wire x1="104.14" y1="38.1" x2="99.06" y2="38.1" width="0.1524" layer="91"/>
-<label x="99.06" y="38.1" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-8" pin="S"/>
+<wire x1="104.14" y1="58.42" x2="99.06" y2="58.42" width="0.1524" layer="91"/>
+<label x="99.06" y="58.42" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="15" class="0">
@@ -881,9 +1027,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="20.32" y="40.64" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-15" pin="S"/>
-<wire x1="104.14" y1="40.64" x2="99.06" y2="40.64" width="0.1524" layer="91"/>
-<label x="99.06" y="40.64" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-9" pin="S"/>
+<wire x1="104.14" y1="55.88" x2="99.06" y2="55.88" width="0.1524" layer="91"/>
+<label x="99.06" y="55.88" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="16" class="0">
@@ -893,21 +1039,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="20.32" y="38.1" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-14" pin="S"/>
-<wire x1="104.14" y1="43.18" x2="99.06" y2="43.18" width="0.1524" layer="91"/>
-<label x="99.06" y="43.18" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="USB" class="0">
-<segment>
-<pinref part="FEATHER" gate="G$1" pin="USB"/>
-<wire x1="25.4" y1="35.56" x2="20.32" y2="35.56" width="0.1524" layer="91"/>
-<label x="20.32" y="35.56" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="VCC"/>
-<wire x1="152.4" y1="81.28" x2="154.94" y2="81.28" width="0.1524" layer="91"/>
-<label x="154.94" y="81.28" size="0.762" layer="95" xref="yes"/>
+<pinref part="KEYBOARD" gate="-10" pin="S"/>
+<wire x1="104.14" y1="53.34" x2="99.06" y2="53.34" width="0.1524" layer="91"/>
+<label x="99.06" y="53.34" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="EN" class="0">
@@ -929,14 +1063,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="73.66" y="55.88" size="0.762" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-2" pin="S"/>
-<wire x1="104.14" y1="73.66" x2="91.44" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="KEYBOARD" gate="-5" pin="S"/>
-<wire x1="91.44" y1="73.66" x2="88.9" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="66.04" x2="91.44" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="66.04" x2="91.44" y2="73.66" width="0.1524" layer="91"/>
-<junction x="91.44" y="73.66"/>
-<label x="88.9" y="73.66" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-21" pin="S"/>
+<wire x1="104.14" y1="25.4" x2="99.06" y2="25.4" width="0.1524" layer="91"/>
+<label x="99.06" y="25.4" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="8" class="0">
@@ -946,9 +1075,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="73.66" y="53.34" size="0.762" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-3" pin="S"/>
-<wire x1="104.14" y1="71.12" x2="99.06" y2="71.12" width="0.1524" layer="91"/>
-<label x="99.06" y="71.12" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-20" pin="S"/>
+<wire x1="104.14" y1="27.94" x2="99.06" y2="27.94" width="0.1524" layer="91"/>
+<label x="99.06" y="27.94" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="14" class="0">
@@ -958,9 +1087,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="73.66" y="50.8" size="0.762" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-4" pin="S"/>
-<wire x1="104.14" y1="68.58" x2="99.06" y2="68.58" width="0.1524" layer="91"/>
-<label x="99.06" y="68.58" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-19" pin="S"/>
+<wire x1="104.14" y1="30.48" x2="99.06" y2="30.48" width="0.1524" layer="91"/>
+<label x="99.06" y="30.48" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="13" class="0">
@@ -970,9 +1099,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="73.66" y="48.26" size="0.762" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-6" pin="S"/>
-<wire x1="104.14" y1="63.5" x2="99.06" y2="63.5" width="0.1524" layer="91"/>
-<label x="99.06" y="63.5" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-18" pin="S"/>
+<wire x1="104.14" y1="33.02" x2="99.06" y2="33.02" width="0.1524" layer="91"/>
+<label x="99.06" y="33.02" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -999,10 +1128,10 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <junction x="83.82" y="22.86"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="GND"/>
-<wire x1="152.4" y1="60.96" x2="154.94" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="GND4" gate="1" pin="GND"/>
-<wire x1="154.94" y1="60.96" x2="154.94" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="GND"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+<wire x1="152.4" y1="27.94" x2="154.94" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="27.94" x2="154.94" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="2" class="0">
@@ -1012,9 +1141,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="73.66" y="30.48" size="0.762" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-13" pin="S"/>
-<wire x1="104.14" y1="45.72" x2="99.06" y2="45.72" width="0.1524" layer="91"/>
-<label x="99.06" y="45.72" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-11" pin="S"/>
+<wire x1="104.14" y1="50.8" x2="99.06" y2="50.8" width="0.1524" layer="91"/>
+<label x="99.06" y="50.8" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="3" class="0">
@@ -1036,9 +1165,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="73.66" y="35.56" size="0.762" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-11" pin="S"/>
-<wire x1="104.14" y1="50.8" x2="99.06" y2="50.8" width="0.1524" layer="91"/>
-<label x="99.06" y="50.8" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-13" pin="S"/>
+<wire x1="104.14" y1="45.72" x2="99.06" y2="45.72" width="0.1524" layer="91"/>
+<label x="99.06" y="45.72" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="5" class="0">
@@ -1048,9 +1177,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="73.66" y="38.1" size="0.762" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-10" pin="S"/>
-<wire x1="104.14" y1="53.34" x2="99.06" y2="53.34" width="0.1524" layer="91"/>
-<label x="99.06" y="53.34" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-14" pin="S"/>
+<wire x1="104.14" y1="43.18" x2="99.06" y2="43.18" width="0.1524" layer="91"/>
+<label x="99.06" y="43.18" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="28" class="0">
@@ -1060,9 +1189,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="73.66" y="40.64" size="0.762" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-9" pin="S"/>
-<wire x1="104.14" y1="55.88" x2="99.06" y2="55.88" width="0.1524" layer="91"/>
-<label x="99.06" y="55.88" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-15" pin="S"/>
+<wire x1="104.14" y1="40.64" x2="99.06" y2="40.64" width="0.1524" layer="91"/>
+<label x="99.06" y="40.64" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="29" class="0">
@@ -1072,9 +1201,9 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="73.66" y="43.18" size="0.762" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-8" pin="S"/>
-<wire x1="104.14" y1="58.42" x2="99.06" y2="58.42" width="0.1524" layer="91"/>
-<label x="99.06" y="58.42" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-16" pin="S"/>
+<wire x1="104.14" y1="38.1" x2="99.06" y2="38.1" width="0.1524" layer="91"/>
+<label x="99.06" y="38.1" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="12" class="0">
@@ -1084,16 +1213,21 @@ Source: http://www.molex.com/product/ffc/52745.html</description>
 <label x="73.66" y="45.72" size="0.762" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="KEYBOARD" gate="-7" pin="S"/>
-<wire x1="104.14" y1="60.96" x2="99.06" y2="60.96" width="0.1524" layer="91"/>
-<label x="99.06" y="60.96" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="KEYBOARD" gate="-17" pin="S"/>
+<wire x1="104.14" y1="35.56" x2="99.06" y2="35.56" width="0.1524" layer="91"/>
+<label x="99.06" y="35.56" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="VBAT" class="0">
+<net name="USB" class="0">
 <segment>
-<pinref part="FEATHER" gate="G$1" pin="VBAT"/>
-<wire x1="25.4" y1="30.48" x2="20.32" y2="30.48" width="0.1524" layer="91"/>
-<label x="20.32" y="30.48" size="0.762" layer="95" rot="R180" xref="yes"/>
+<pinref part="U$2" gate="G$1" pin="VBUS"/>
+<wire x1="152.4" y1="38.1" x2="157.48" y2="38.1" width="0.1524" layer="91"/>
+<label x="157.48" y="38.1" size="0.8128" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="FEATHER" gate="G$1" pin="USB"/>
+<wire x1="25.4" y1="35.56" x2="20.32" y2="35.56" width="0.1524" layer="91"/>
+<label x="20.32" y="35.56" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
