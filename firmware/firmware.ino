@@ -16,26 +16,26 @@
 BLEDis bledis;
 BLEHidAdafruit blehid;
 
-#define KEYBOARD_01 6
-#define KEYBOARD_02 8
-#define KEYBOARD_03 14
-#define KEYBOARD_04 6
-#define KEYBOARD_05 13
-#define KEYBOARD_06 12
-#define KEYBOARD_07 29
-#define KEYBOARD_08 28
-#define KEYBOARD_09 5
-#define KEYBOARD_10 4
+#define KEYBOARD_01 25
+#define KEYBOARD_02 26
+#define KEYBOARD_03 27
+#define KEYBOARD_04 25
+#define KEYBOARD_05 30
+#define KEYBOARD_06 11
+#define KEYBOARD_07 7
+#define KEYBOARD_08 15
+#define KEYBOARD_09 16
+#define KEYBOARD_10 2
 #define KEYBOARD_11 3
-#define KEYBOARD_12 2
-#define KEYBOARD_13 16
-#define KEYBOARD_14 15
-#define KEYBOARD_15 7
-#define KEYBOARD_16 11
-#define KEYBOARD_17 30
-#define KEYBOARD_18 27
-#define KEYBOARD_19 26
-#define KEYBOARD_20 25
+#define KEYBOARD_12 4
+#define KEYBOARD_13 5
+#define KEYBOARD_14 28
+#define KEYBOARD_15 29
+#define KEYBOARD_16 12
+#define KEYBOARD_17 13
+#define KEYBOARD_18 14
+#define KEYBOARD_19 8
+#define KEYBOARD_20 6
 
 # define MAX_COLUMNS 11
 int COLUMNS[] = {
