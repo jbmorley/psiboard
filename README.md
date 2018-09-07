@@ -2,6 +2,12 @@
 
 Psion Series 5 Bluetooth keyboard
 
+## Case Design
+
+![Overall design](images/design.png)
+
+![Hinge detail](images/hinge.png)
+
 ## PCB
 
 ### v1.1
