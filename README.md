@@ -1,6 +1,6 @@
 # PsiBoard
 
-Psion Series 5 Bluetooth keyboard
+Psion Series 5 based bluetooth keyboard
 
 ## Case Design
 
