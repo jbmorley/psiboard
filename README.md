@@ -2,15 +2,9 @@
 
 Psion Series 5 based bluetooth keyboard
 
-## Case Design
+![](images/hero.jpeg)
 
-### Overview
 
-![Overall design](images/design.png)
-
-### Hinge detail
-
-![Hinge detail](images/hinge.png)
 
 ## PCB
 
