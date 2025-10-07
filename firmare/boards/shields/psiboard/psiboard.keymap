@@ -1,0 +1,113 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
+#define LOWER 1
+#define RAISE 2
+
+/ {
+
+    behaviors {
+
+        dotqmark: dot_question {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_QUESTION";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp QUESTION>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        n2dqt: n2_double_quotes {
+            compatible = "zmk,behavior-mod-morph";
+            label = "N2_DOUBLE_QUOTES";
+            #binding-cells = <0>;
+            bindings = <&kp N2>, <&kp DOUBLE_QUOTES>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        commaslash: comma_slash {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_SLASH";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SLASH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        sqttilde: single_quote_tilde {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SINGLE_QUOTE_TILDE";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE>, <&kp TILDE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_fn_menu {
+            timeout-ms = <50>;
+            key-positions = <46 47>;
+            bindings = <&mo RAISE>;
+            slow-release;
+        };
+
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+
+            bindings = <
+
+                  &kp ESC      &kp N1        &n2dqt        &kp N3        &kp N4        &kp N5        &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &kp BSPC
+
+                       &kp Q         &kp W         &kp E         &kp R         &kp T         &kp Y         &kp U         &kp I         &kp O         &kp P         &kp RET
+
+                  &kp TAB       &kp A         &kp S         &kp D         &kp F         &kp G         &kp H         &kp J         &kp K         &kp L      &sqttilde
+
+                       &kp LSHFT     &kp Z         &kp X         &kp C         &kp V         &kp B         &kp N         &kp M         &dotqmark     &kp UP        &kp RSHFT
+
+                       &kp LCTRL   &mo LOWER    &kp LEFT_GUI                         &kp SPACE                        &commaslash      &kp LEFT      &kp DOWN      &kp RIGHT
+
+            >;
+
+        };
+
+        lower_layer {
+
+            bindings = <
+
+                &soft_off   &kp UNDER      &kp HASH      &kp BSLH      &kp AT         &kp LT        &kp GT       &kp LBKT     &kp RBKT       &kp LBRC      &kp RBRC        &none
+
+                       &none         &none         &none         &none         &none   &kp KP_MULTIPLY &kp KP_DIVIDE  &kp KP_PLUS  &kp KP_MINUS   &kp KP_EQUAL      &none
+
+                &kp CAPS      &none         &none         &none         &none         &none         &none         &none         &none       &kp SEMI       &kp COLON
+
+                       &none         &none         &none         &none         &none         &none         &none      &kp C_BRI_DN  &kp C_BRI_UP    &kp PG_UP       &none
+
+                       &none         &none         &none                           &none                               &none       &kp HOME      &kp PG_DN      &kp END
+            >;
+
+        };
+
+        raise_layer {
+
+            bindings = <
+                  &none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &none         &none         &none         &none         &none       &bt BT_CLR
+
+                       &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &none
+
+                  &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &none
+
+                       &none         &none         &none         &none         &none         &none         &none       &kp C_VOL_DN       &kp C_VOL_UP        &none         &none
+
+                       &none         &none         &none                               &none                             &none         &none         &none         &none
+            >;
+
+        };
+
+    };
+};

@@ -1,0 +1,14 @@
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    with:
+      build_matrix_path: firmware/build.yaml
+      config_path: firmware
+      archive_name: firmware
