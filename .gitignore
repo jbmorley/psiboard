@@ -3,6 +3,6 @@
 *.l#*
 *.pro
 *.s#*
+pcb/*-backups/*.zip
 pcb/*.dsn
 pcb/*.ses
-pcb/*-backups/*.zip
