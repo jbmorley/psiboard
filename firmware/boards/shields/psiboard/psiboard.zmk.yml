@@ -1,0 +1,9 @@
+file_format: "1"
+id: psiboard
+name: PsiBoard
+type: shield
+url: https://github.com/foostan/crkbd/
+requires: [pro_micro]
+exposes: []
+features:
+  - keys
