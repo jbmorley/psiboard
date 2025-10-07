@@ -1,6 +1,8 @@
 *.b#*
-*.s#*
-*.l#*
 *.job
+*.l#*
 *.pro
-
+*.s#*
+pcb/*.dsn
+pcb/*.ses
+pcb/*-backups/*.zip
