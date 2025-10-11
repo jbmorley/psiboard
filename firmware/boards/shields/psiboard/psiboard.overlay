@@ -39,8 +39,8 @@
             , <&pro_micro 18 GPIO_ACTIVE_HIGH>  // COL3 (PM 18 -> KBD 17)
             , <&pro_micro 15 GPIO_ACTIVE_HIGH>  // COL4 (PM 15 -> KBD 16)
             , <&pro_micro 14 GPIO_ACTIVE_HIGH>  // COL5 (PM 14 -> KBD 14)
-            , <&pro_micro 16 GPIO_ACTIVE_HIGH>  // COL6 (PM 16 -> KBD 13)
             , <&pro_micro 10 GPIO_ACTIVE_HIGH>  // COL7 (PM 10 -> KBD 12)
+            , <&pro_micro 16 GPIO_ACTIVE_HIGH>  // COL6 (PM 16 -> KBD 13)
             ;
 
         row-gpios
