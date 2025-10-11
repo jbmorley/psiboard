@@ -49,7 +49,6 @@
             , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // ROW4 (PM 6 -> KBD 8)
             , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // ROW5 (PM 7 -> KBD 7)
             , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // ROW6 (PM 8 -> KBD 1-6)
-            , <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // ROW7 (PM 9 -> NC)
             ;
     };
 
