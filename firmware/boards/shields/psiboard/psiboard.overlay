@@ -9,7 +9,7 @@
     keys {
         compatible = "gpio-keys";
         soft_off_gpio_key: soft_off_gpio_key {
-            gpios = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+            gpios = <&pro_micro 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         };
     };
 
@@ -22,7 +22,7 @@
         compatible = "zmk,gpio-key-wakeup-trigger";
         trigger = <&soft_off_gpio_key>;
         wakeup-source;
-        extra-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>;
+        extra-gpios = <&pro_micro 16 GPIO_ACTIVE_LOW>;
     };
 
     kscan0: kscan_0 {
@@ -33,24 +33,24 @@
         debounce-release-ms = <10>;
 
         col-gpios
-            = <&pro_micro 21 GPIO_ACTIVE_HIGH>  // COL0 (PM 21 -> KBD 20)
-            , <&pro_micro 20 GPIO_ACTIVE_HIGH>  // COL1 (PM 20 -> KBD 19)
-            , <&pro_micro 19 GPIO_ACTIVE_HIGH>  // COL2 (PM 19 -> KBD 18)
-            , <&pro_micro 18 GPIO_ACTIVE_HIGH>  // COL3 (PM 18 -> KBD 17)
-            , <&pro_micro 15 GPIO_ACTIVE_HIGH>  // COL4 (PM 15 -> KBD 16)
-            , <&pro_micro 14 GPIO_ACTIVE_HIGH>  // COL5 (PM 14 -> KBD 14)
-            , <&pro_micro 10 GPIO_ACTIVE_HIGH>  // COL7 (PM 10 -> KBD 12)
-            , <&pro_micro 16 GPIO_ACTIVE_HIGH>  // COL6 (PM 16 -> KBD 13)
+            = <&pro_micro 21 GPIO_ACTIVE_LOW>  // COL0 (PM 21 -> KBD 20)
+            , <&pro_micro 20 GPIO_ACTIVE_LOW>  // COL1 (PM 20 -> KBD 19)
+            , <&pro_micro 19 GPIO_ACTIVE_LOW>  // COL2 (PM 19 -> KBD 18)
+            , <&pro_micro 18 GPIO_ACTIVE_LOW>  // COL3 (PM 18 -> KBD 17)
+            , <&pro_micro 15 GPIO_ACTIVE_LOW>  // COL4 (PM 15 -> KBD 16)
+            , <&pro_micro 14 GPIO_ACTIVE_LOW>  // COL5 (PM 14 -> KBD 14)
+            , <&pro_micro 10 GPIO_ACTIVE_LOW>  // COL7 (PM 10 -> KBD 12)
+            , <&pro_micro 16 GPIO_ACTIVE_LOW>  // COL6 (PM 16 -> KBD 13)
             ;
 
         row-gpios
-            = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // ROW0 (PM 1 -> KBD 15)
-            , <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // ROW2 (PM 4 -> KBD 10)
-            , <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // ROW1 (PM 0 -> KBD 11)
-            , <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // ROW3 (PM 5 -> KBD 9)
-            , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // ROW4 (PM 6 -> KBD 8)
-            , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // ROW5 (PM 7 -> KBD 7)
-            , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // ROW6 (PM 8 -> KBD 1-6)
+            = <&pro_micro 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // ROW0 (PM 1 -> KBD 15)
+            , <&pro_micro 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // ROW2 (PM 4 -> KBD 10)
+            , <&pro_micro 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // ROW1 (PM 0 -> KBD 11)
+            , <&pro_micro 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // ROW3 (PM 5 -> KBD 9)
+            , <&pro_micro 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // ROW4 (PM 6 -> KBD 8)
+            , <&pro_micro 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // ROW5 (PM 7 -> KBD 7)
+            , <&pro_micro 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // ROW6 (PM 8 -> KBD 1-6)
             ;
     };
 
