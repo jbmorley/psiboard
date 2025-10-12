@@ -6,3 +6,4 @@
 pcb/*-backups/*.zip
 pcb/*.dsn
 pcb/*.ses
+pcb/psiboard.kicad_pcb.zip
