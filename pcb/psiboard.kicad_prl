@@ -57,7 +57,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "keyboard.kicad_prl",
+    "filename": "psiboard.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {
@@ -95,7 +95,7 @@
       103,
       74,
       103,
-      103
+      10
     ],
     "custom_group_rules": [],
     "expanded_rows": [],
