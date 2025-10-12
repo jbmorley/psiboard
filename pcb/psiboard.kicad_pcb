@@ -1972,9 +1972,9 @@
 			(uuid "1ea3e549-ba51-4413-adfe-53a76fb616f1")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/models/524352271.stp"
+		(model "${KIPRJMOD}/components/524372271/524372271.stp"
 			(offset
-				(xyz 0 -1.4 0)
+				(xyz 0 -1.5 -0.05)
 			)
 			(scale
 				(xyz 1 1 1)
@@ -3293,7 +3293,7 @@
 		(path "/47c07748-ef56-4fbc-bc04-a64b7175dd55")
 		(sheetname "/")
 		(sheetfile "psiboard.kicad_sch")
-		(attr smd)
+		(attr smd dnp)
 		(fp_line
 			(start -8.89 15.24)
 			(end -8.89 -15.24)
@@ -3751,6 +3751,17 @@
 			(uuid "170a084d-62f7-4767-bec0-ed2634124aeb")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/components/nicenano/nicenano.step"
+			(offset
+				(xyz 0 0 1.4)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -180 -0 90)
+			)
+		)
 	)
 	(gr_arc
 		(start 177.546 75.946)

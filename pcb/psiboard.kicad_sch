@@ -3071,7 +3071,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "22-pin molex:CON_524352271_MOL"
+		(property "Footprint" "22-pin molex (bottom):CON_524372271_MOL"
 			(at 91.44 58.42 0)
 			(effects
 				(font
