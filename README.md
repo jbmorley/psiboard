@@ -17,3 +17,11 @@ https://www.digikey.com/en/products/detail/molex/0524372271/3262899
 ### Reset Switch
 
 https://www.digikey.com/en/products/detail/panasonic-electronic-components/EVQ-P7A01P/4429447
+
+## Development
+
+### Useful Links
+
+- [ZMK Firmware - List of Keycodes](https://zmk.dev/docs/keymaps/list-of-keycodes)
+- [ZMK Firmware - Power Management Configuration](https://zmk.dev/docs/config/power)
+- [Pro Micro Pinout](https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide/all)
