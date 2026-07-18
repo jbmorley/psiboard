@@ -3,6 +3,11 @@
 *.l#*
 *.pro
 *.s#*
+
+# Build tooling output.
+/.local
+/artifacts
+/build
 pcb/*-backups/*.zip
 pcb/*.dsn
 pcb/*.ses
