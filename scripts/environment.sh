@@ -36,6 +36,7 @@ export WORKON_HOME="$LOCAL_TOOLS_PATH"
 export PIPENV_VENV_IN_PROJECT=0
 export PIPENV_IGNORE_VIRTUALENVS=1
 
+# Add the tools to the path.
 export PATH="$SCRIPTS_DIRECTORY/changes":$PATH
 export PATH="$SCRIPTS_DIRECTORY/build-tools":$PATH
 
