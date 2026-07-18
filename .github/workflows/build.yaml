@@ -58,6 +58,7 @@ jobs:
 
   publish-release:
     runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
 
     needs:
     - generate-version-number
@@ -103,7 +104,6 @@ jobs:
       id: publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        RELEASE: ${{ github.ref == 'refs/heads/main' }}
       run: scripts/release.sh
 
     - name: Archive the release binaries

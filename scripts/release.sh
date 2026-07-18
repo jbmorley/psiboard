@@ -38,24 +38,6 @@ source "$SCRIPTS_DIRECTORY/environment.sh"
 # Check that the GitHub command is available on the path.
 which gh || (echo "GitHub cli (gh) not available on the path." && exit 1)
 
-# Process the command line arguments.
-POSITIONAL=()
-RELEASE=${RELEASE:-false}
-while [[ $# -gt 0 ]]
-do
-    key="$1"
-    case $key in
-        -r|--release)
-        RELEASE=true
-        shift
-        ;;
-        *)
-        POSITIONAL+=("$1")
-        shift
-        ;;
-    esac
-done
-
 # Source the .env file if present, to ease local development.
 if [ -f "$ENV_PATH" ] ; then
     echo "Sourcing .env..."
@@ -87,14 +69,10 @@ cp "$ARTIFACTS_DIRECTORY/psiboard-nice-nano-v1.uf2" "$PSIBOARD_NICE_NANO_V1_NAME
 PSIBOARD_NICE_NANO_V2_NAME="psiboard-nice-nano-v2-$VERSION_NUMBER-$BUILD_NUMBER.uf2"
 cp "$ARTIFACTS_DIRECTORY/psiboard-nice-nano-v2.uf2" "$PSIBOARD_NICE_NANO_V2_NAME"
 
-if $RELEASE ; then
-
-    changes \
-        release \
-        --skip-if-empty \
-        --push \
-        --exec "$RELEASE_SCRIPT_PATH" \
-        "$BUILD_DIRECTORY/$PSIBOARD_NICE_NANO_V1_NAME" \
-        "$BUILD_DIRECTORY/$PSIBOARD_NICE_NANO_V2_NAME"
-
-fi
+changes \
+    release \
+    --skip-if-empty \
+    --push \
+    --exec "$RELEASE_SCRIPT_PATH" \
+    "$BUILD_DIRECTORY/$PSIBOARD_NICE_NANO_V1_NAME" \
+    "$BUILD_DIRECTORY/$PSIBOARD_NICE_NANO_V2_NAME"
