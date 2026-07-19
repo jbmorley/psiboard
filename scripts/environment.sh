@@ -33,12 +33,13 @@ export PYTHONPATH=$PYTHONUSERBASE
 
 # Keep pipenv virtualenvs local and predictable.
 export WORKON_HOME="$LOCAL_TOOLS_PATH"
+export PIPENV_CUSTOM_VENV_NAME="venv"
 export PIPENV_VENV_IN_PROJECT=0
 export PIPENV_IGNORE_VIRTUALENVS=1
+export PIPENV_PIPFILE="$SCRIPTS_DIRECTORY/Pipfile"
 
 # Add the tools to the path.
-export PATH="$SCRIPTS_DIRECTORY/changes":$PATH
-export PATH="$SCRIPTS_DIRECTORY/build-tools":$PATH
+export PATH="$LOCAL_TOOLS_PATH/venv/bin":$PATH
 
 # Activate mise to pin the Python version used to run the tools.
 eval "$(mise activate bash)"
