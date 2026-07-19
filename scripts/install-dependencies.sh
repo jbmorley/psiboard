@@ -29,8 +29,6 @@ ROOT_DIRECTORY="$( cd "$( dirname "$( dirname "${BASH_SOURCE[0]}" )" )" &> /dev/
 SCRIPTS_DIRECTORY="$ROOT_DIRECTORY/scripts"
 
 LOCAL_TOOLS_PATH="$ROOT_DIRECTORY/.local"
-CHANGES_DIRECTORY="$SCRIPTS_DIRECTORY/changes"
-BUILD_TOOLS_DIRECTORY="$SCRIPTS_DIRECTORY/build-tools"
 
 # Install tools defined in `.tool-versions`.
 cd "$ROOT_DIRECTORY"
@@ -45,7 +43,6 @@ mkdir -p "$LOCAL_TOOLS_PATH"
 # Source `environment.sh` to ensure the remainder of our paths are set up correctly.
 source "$SCRIPTS_DIRECTORY/environment.sh"
 
-# Install the Python dependencies for the vendored versioning tools.
+# Install the Python dependencies (uses PIPENV_PIPFILE from environment.sh).
 pip install --upgrade pip pipenv wheel certifi
-PIPENV_PIPFILE="$CHANGES_DIRECTORY/Pipfile" pipenv install
-PIPENV_PIPFILE="$BUILD_TOOLS_DIRECTORY/Pipfile" pipenv install
+pipenv install

@@ -8,6 +8,7 @@
 /.local
 /artifacts
 /build
+/scripts/Pipfile.lock
 pcb/*-backups/*.zip
 pcb/*.dsn
 pcb/*.ses
