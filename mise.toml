@@ -1,6 +1,6 @@
 [tools]
 
-python = "3.12.13"
+python = "3.15.2"
 uv = "latest"
 
 "pipx:changes-semver" = "6"
