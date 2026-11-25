@@ -16,7 +16,7 @@ concurrency:
 jobs:
 
   generate-version-number:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
 
     outputs:
       version_number: ${{ steps.version.outputs.version_number }}
@@ -50,7 +50,7 @@ jobs:
       archive_name: firmware
 
   publish-release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     if: ${{ github.ref == 'refs/heads/main' }}
 
     needs:
